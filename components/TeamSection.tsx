@@ -135,23 +135,23 @@ const TeamSection: React.FC = () => {
                   </Box>
                 )}
 
-                <CardContent sx={{ p: 3, textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ p: 2.5, textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
                   {/* Avatar */}
-                  <Box sx={{ mb: 3 }}>
+                  <Box sx={{ mb: 2 }}>
                     <Box
                       sx={{
-                        width: 120,
-                        height: 120,
+                        width: 80,
+                        height: 80,
                         mx: 'auto',
-                        mb: 2,
+                        mb: 1.5,
                         borderRadius: '50%',
                         background: `linear-gradient(135deg, ${theme.palette.primary.main}20, ${theme.palette.secondary.main}20)`,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: '3rem',
-                        border: `4px solid ${theme.palette.background.paper}`,
-                        boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+                        fontSize: '2.2rem',
+                        border: `3px solid ${theme.palette.background.paper}`,
+                        boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
                       }}
                     >
                       {member.avatar}
@@ -163,19 +163,20 @@ const TeamSection: React.FC = () => {
                     variant="h6"
                     sx={{
                       fontWeight: 600,
-                      mb: 1,
+                      mb: 0.5,
                       color: 'text.primary',
+                      fontSize: '1.1rem'
                     }}
                   >
                     {member.name}
                   </Typography>
 
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     sx={{
                       color: theme.palette.primary.main,
                       fontWeight: 500,
-                      mb: 2,
+                      mb: 1.5,
                     }}
                   >
                     {member.role}
@@ -186,30 +187,23 @@ const TeamSection: React.FC = () => {
                     variant="body2"
                     sx={{
                       color: 'text.secondary',
-                      mb: 3,
-                      lineHeight: 1.6,
+                      mb: 2,
+                      lineHeight: 1.5,
                       flex: 1,
+                      fontSize: '0.875rem',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden'
                     }}
                   >
                     {member.description}
                   </Typography>
 
                   {/* Specialties */}
-                  <Box sx={{ mb: 3 }}>
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        color: 'text.secondary',
-                        textTransform: 'uppercase',
-                        fontWeight: 600,
-                        mb: 1,
-                        display: 'block',
-                      }}
-                    >
-                      Specialties
-                    </Typography>
+                  <Box sx={{ mb: 2 }}>
                     <Stack direction="row" spacing={0.5} justifyContent="center" flexWrap="wrap" gap={0.5}>
-                      {member.specialties.map((specialty, specialtyIndex) => (
+                      {member.specialties.slice(0, 2).map((specialty, specialtyIndex) => (
                         <Chip
                           key={specialtyIndex}
                           label={specialty}
@@ -217,40 +211,31 @@ const TeamSection: React.FC = () => {
                           sx={{
                             bgcolor: `${theme.palette.primary.main}15`,
                             color: theme.palette.primary.main,
-                            fontSize: '0.75rem',
-                            height: 24,
+                            fontSize: '0.7rem',
+                            height: 20,
                           }}
                         />
                       ))}
+                      {member.specialties.length > 2 && (
+                        <Chip
+                          label={`+${member.specialties.length - 2}`}
+                          size="small"
+                          sx={{
+                            bgcolor: `${theme.palette.secondary.main}15`,
+                            color: theme.palette.secondary.main,
+                            fontSize: '0.7rem',
+                            height: 20,
+                          }}
+                        />
+                      )}
                     </Stack>
                   </Box>
 
                   {/* Contact */}
-                  <Stack spacing={1} sx={{ mt: 'auto' }}>
-                    <Button
-                      startIcon={<Email />}
-                      size="small"
-                      sx={{
-                        color: 'text.secondary',
-                        textTransform: 'none',
-                        justifyContent: 'flex-start',
-                        fontSize: '0.875rem',
-                      }}
-                    >
-                      {member.email}
-                    </Button>
-                    <Button
-                      startIcon={<Phone />}
-                      size="small"
-                      sx={{
-                        color: 'text.secondary',
-                        textTransform: 'none',
-                        justifyContent: 'flex-start',
-                        fontSize: '0.875rem',
-                      }}
-                    >
+                  <Stack spacing={0.5} sx={{ mt: 'auto' }}>
+                    <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.75rem' }}>
                       {member.phone}
-                    </Button>
+                    </Typography>
                   </Stack>
                 </CardContent>
               </Card>

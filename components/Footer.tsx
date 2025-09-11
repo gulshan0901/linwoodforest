@@ -14,6 +14,7 @@ import {
   CardContent,
   Chip,
   Avatar,
+  Link,
 } from '@mui/material';
 import {
   Phone,
@@ -371,7 +372,7 @@ const Footer: React.FC = () => {
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                © {currentYear} Linwood Forest Insurance Group LLC. All rights reserved.
+                © {currentYear} Linwood Forest Insurance Group LLC. All rights reserved. | Designed By <Link  href='https://www.linkedin.com/in/gulshankumarofficial/' color="inherit" underline="hover" target="_blank">Gulshan</Link>.
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
