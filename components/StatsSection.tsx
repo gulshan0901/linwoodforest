@@ -88,7 +88,7 @@ const StatsSection: React.FC = () => {
       value: 6,
       suffix: '',
       label: 'Licensed States',
-      description: 'We serve clients across Pennsylvania, New Jersey, Delaware, Maryland, Virginia, and Washington D.C.',
+  description: 'We serve clients across Pennsylvania, New Jersey, Delaware, Maryland, Virginia, and Washington D.C.',
       color: theme.palette.primary.main,
     },
     {
@@ -113,7 +113,7 @@ const StatsSection: React.FC = () => {
       suffix: 'M',
       prefix: '$',
       label: 'Claims Paid',
-      description: 'We\'ve helped our clients recover millions in claims when they needed it most.',
+  description: 'We&apos;ve helped our clients recover millions in claims when they needed it most.',
       color: theme.palette.success.main,
     },
     {
@@ -145,7 +145,7 @@ const StatsSection: React.FC = () => {
       value: 24,
       suffix: '/7',
       label: 'Support Available',
-      description: 'Round-the-clock claims support ensures you\'re never alone when you need help.',
+  description: 'Round-the-clock claims support ensures you&apos;re never alone when you need help.',
       color: theme.palette.secondary.dark,
     },
   ];
@@ -328,7 +328,7 @@ const StatsSection: React.FC = () => {
             }}
           >
             Experience the Linwood Forest difference. Our track record speaks for itself, 
-            and we're ready to put our expertise to work for you.
+            and we&apos;re ready to put our expertise to work for you.
           </Typography>
           <Stack 
             direction={{ xs: 'column', sm: 'row' }} 

@@ -140,7 +140,7 @@ const ContactSection: React.FC = () => {
                 variant="h4"
                 sx={{ fontWeight: 600, color: 'text.primary', mb: 2 }}
               >
-                Let's Connect
+                Let&apos;s Connect
               </Typography>
               
               {contactInfo.map((info, index) => {
@@ -243,7 +243,7 @@ const ContactSection: React.FC = () => {
                   variant="body1"
                   sx={{ color: 'text.secondary', mb: 4 }}
                 >
-                  Fill out the form below and we'll get back to you within 24 hours with a 
+                  Fill out the form below and we&apos;ll get back to you within 24 hours with a 
                   personalized insurance quote.
                 </Typography>
 
@@ -253,7 +253,7 @@ const ContactSection: React.FC = () => {
                     sx={{ mb: 3 }}
                     icon={<CheckCircle />}
                   >
-                    Thank you! Your message has been sent. We'll contact you within 24 hours.
+                    Thank you! Your message has been sent. We&apos;ll contact you within 24 hours.
                   </Alert>
                 )}
 

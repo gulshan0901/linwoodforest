@@ -93,7 +93,7 @@ const TeamSection: React.FC = () => {
             }}
           >
             Our experienced insurance professionals are here to guide you every step of the way. 
-            With decades of combined experience, we're your trusted advocates.
+            With decades of combined experience, we&apos;re your trusted advocates.
           </Typography>
         </Box>
 

@@ -99,19 +99,21 @@ const TestimonialsSection: React.FC = () => {
     },
   ];
 
-  const nextTestimonial = () => {
+  const nextTestimonial = React.useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % Math.ceil(testimonials.length / 3));
-  };
+  }, [testimonials.length]);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = React.useCallback(() => {
     setCurrentTestimonial((prev) => (prev - 1 + Math.ceil(testimonials.length / 3)) % Math.ceil(testimonials.length / 3));
-  };
+  }, [testimonials.length]);
 
   // Auto-advance testimonials
   useEffect(() => {
-    const timer = setInterval(nextTestimonial, 5000);
+    const timer = setInterval(() => {
+      nextTestimonial();
+    }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [nextTestimonial, testimonials.length]);
 
   const currentTestimonials = testimonials.slice(
     currentTestimonial * 3,
@@ -159,7 +161,7 @@ const TestimonialsSection: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            Don't just take our word for it. Here's what our satisfied clients have to say about our service.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our service.
           </Typography>
 
           {/* Rating Summary */}
@@ -247,18 +249,18 @@ const TestimonialsSection: React.FC = () => {
                     </Box>
 
                     {/* Testimonial Text */}
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: 'text.primary',
-                        lineHeight: 1.6,
-                        mb: 3,
-                        fontStyle: 'italic',
-                        flex: 1,
-                      }}
-                    >
-                      "{testimonial.text}"
-                    </Typography>
+                              <Typography
+                                variant="body1"
+                                sx={{
+                                  color: 'text.primary',
+                                  lineHeight: 1.6,
+                                  mb: 3,
+                                  fontStyle: 'italic',
+                                  flex: 1,
+                                }}
+                              >
+                                &ldquo;{testimonial.text}&rdquo;
+                              </Typography>
 
                     {/* Client Info */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 'auto' }}>
