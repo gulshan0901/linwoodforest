@@ -1,0 +1,514 @@
+@layer linwood.components {
+  .linwood-hero {
+    position: relative;
+    min-height: auto;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 76% 38%, rgb(43 141 48 / 0.16), transparent 23rem),
+      linear-gradient(145deg, #176bc7 0%, #185ab3 52%, #1550a4 100%);
+    color: var(--linwood-color-white);
+  }
+
+  .linwood-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(115deg, transparent 0 46%, rgb(255 255 255 / 0.1) 46% 47%, transparent 47%),
+      repeating-linear-gradient(
+        112deg,
+        transparent 0 5rem,
+        rgb(255 255 255 / 0.035) 5rem 5.08rem,
+        transparent 5.08rem 10rem
+      );
+    animation: linwood-hero-sheen 12s ease-in-out infinite alternate;
+  }
+
+  .linwood-hero::after {
+    content: '';
+    position: absolute;
+    inset: auto -10rem -16rem auto;
+    width: 34rem;
+    height: 34rem;
+    border-radius: 50%;
+    background: rgb(77 176 65 / 0.2);
+    filter: blur(12px);
+    animation: linwood-float-soft 9s ease-in-out infinite;
+  }
+
+  .linwood-hero__inner {
+    position: relative;
+    display: grid;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+    max-width: none;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .linwood-hero__copy {
+    position: relative;
+    z-index: 1;
+    max-width: 43rem;
+    animation: linwood-fade-up 680ms ease-out both;
+  }
+
+  .linwood-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--linwood-space-2);
+    margin: 0 0 var(--linwood-space-8);
+    color: #69c957;
+    font-size: var(--linwood-text-md);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .linwood-hero__eyebrow svg {
+    font-size: 1.4rem;
+  }
+
+  .linwood-hero h1.linwood-hero__title {
+    margin: 0;
+    color: var(--linwood-color-white);
+    font-size: 2.65rem !important;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1.04 !important;
+    text-wrap: balance;
+  }
+
+  .linwood-hero__title span {
+    color: #55b947;
+  }
+
+  .linwood-hero__body {
+    max-width: 40rem;
+    margin-block: var(--linwood-space-8) 0;
+    color: rgb(255 255 255 / 0.94);
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  .linwood-hero__service-area {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--linwood-space-3);
+    max-width: 45rem;
+    margin: var(--linwood-space-8) 0 0;
+    color: rgb(255 255 255 / 0.94);
+    font-size: var(--linwood-text-lg);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .linwood-hero__service-area svg {
+    flex: 0 0 auto;
+    margin-top: 0.2rem;
+    color: #69c957;
+  }
+
+  .linwood-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--linwood-space-4);
+    margin-top: var(--linwood-space-8);
+  }
+
+  .linwood-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--linwood-space-3);
+    min-width: 14rem;
+    min-height: 4.25rem;
+    border-radius: 0.55rem;
+    color: var(--linwood-color-white);
+    font-size: var(--linwood-text-lg);
+    font-weight: 900;
+    text-decoration: none;
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  .linwood-hero__button--primary {
+    background: #2f9636;
+    color: var(--linwood-color-white);
+    box-shadow: 0 18px 38px rgb(22 78 30 / 0.22);
+  }
+
+  .linwood-hero__button--primary:hover,
+  .linwood-hero__button--primary:focus-visible {
+    background: #24812e;
+    box-shadow: 0 22px 46px rgb(22 78 30 / 0.28);
+    transform: translateY(-3px);
+  }
+
+  .linwood-hero__button--secondary {
+    border: 1px solid rgb(255 255 255 / 0.75);
+    background: rgb(255 255 255 / 0.03);
+  }
+
+  .linwood-hero__button--secondary:hover,
+  .linwood-hero__button--secondary:focus-visible {
+    background: rgb(255 255 255 / 0.14);
+    transform: translateY(-3px);
+  }
+
+  .linwood-hero__trusted {
+    margin: var(--linwood-space-8) 0 0;
+    color: rgb(255 255 255 / 0.78);
+    font-size: var(--linwood-text-md);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .linwood-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, max-content));
+    gap: clamp(1.25rem, 5vw, 4.5rem);
+    margin: var(--linwood-space-6) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .linwood-hero__stats li {
+    display: grid;
+    gap: var(--linwood-space-1);
+    position: relative;
+    padding-left: var(--linwood-space-3);
+  }
+
+  .linwood-hero__stats li::before {
+    content: '';
+    position: absolute;
+    top: 0.15rem;
+    bottom: 0.1rem;
+    left: 0;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(#69c957, transparent);
+  }
+
+  .linwood-hero__stats strong {
+    color: #69c957;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .linwood-hero__stats span {
+    color: var(--linwood-color-white);
+    font-weight: 700;
+  }
+
+  .linwood-hero__visual {
+    position: relative;
+    display: block;
+    min-height: clamp(25rem, 78vw, 34rem);
+    animation: linwood-fade-up 820ms 120ms ease-out both;
+  }
+
+  .linwood-hero__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    opacity: 0.7;
+  }
+
+  .linwood-hero__glow--one {
+    inset: 6rem 0 auto auto;
+    width: 12rem;
+    height: 12rem;
+    background: rgb(93 184 68 / 0.24);
+    animation: linwood-float-soft 7s ease-in-out infinite;
+  }
+
+  .linwood-hero__glow--two {
+    inset: auto auto 3rem 4rem;
+    width: 9rem;
+    height: 9rem;
+    background: rgb(255 255 255 / 0.12);
+    animation: linwood-float-soft 8s 600ms ease-in-out infinite reverse;
+  }
+
+  .linwood-hero__orbit {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 29rem;
+    height: 29rem;
+    border: 2px solid rgb(255 255 255 / 0.24);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: linwood-spin 28s linear infinite;
+  }
+
+  .linwood-hero__orbit::before,
+  .linwood-hero__orbit::after {
+    content: '';
+    position: absolute;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    background: #69c957;
+    box-shadow: 0 0 0 0.55rem rgb(105 201 87 / 0.14);
+  }
+
+  .linwood-hero__orbit::before {
+    top: 12%;
+    right: 18%;
+  }
+
+  .linwood-hero__orbit::after {
+    bottom: 15%;
+    left: 16%;
+  }
+
+  .linwood-hero__orbit--outer {
+    width: 33rem;
+    height: 33rem;
+    border-color: rgb(255 255 255 / 0.22);
+    border-style: dashed;
+    animation-duration: 42s;
+    animation-direction: reverse;
+  }
+
+  .linwood-hero__shield {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    display: grid;
+    width: 25rem;
+    height: 25rem;
+    place-items: center;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 34% 28%, rgb(255 255 255 / 0.12), transparent 28%),
+      linear-gradient(145deg, #2f9636, #176f26);
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.08),
+      0 36px 90px rgb(0 0 0 / 0.24);
+    transform: translate(-50%, -50%);
+    animation: linwood-pulse 5s ease-in-out infinite;
+  }
+
+  .linwood-hero__shield .MuiSvgIcon-root {
+    width: 8.75rem !important;
+    height: 8.75rem !important;
+    color: var(--linwood-color-white);
+    font-size: 8.75rem !important;
+  }
+
+  .linwood-hero__float-card {
+    position: absolute;
+    display: grid;
+    gap: var(--linwood-space-2);
+    border: 1px solid rgb(255 255 255 / 0.72);
+    border-radius: var(--linwood-radius-md);
+    background: rgb(255 255 255 / 0.92);
+    backdrop-filter: blur(12px);
+    color: #185ab3;
+    box-shadow: 0 22px 40px rgb(10 52 118 / 0.2);
+    padding: var(--linwood-space-5);
+    animation: linwood-card-float 5.8s ease-in-out infinite;
+  }
+
+  .linwood-hero__float-card strong {
+    font-size: 1.6rem;
+  }
+
+  .linwood-hero__float-card span {
+    font-size: var(--linwood-text-md);
+  }
+
+  .linwood-hero__float-card--top {
+    top: 7.5rem;
+    right: 1rem;
+  }
+
+  .linwood-hero__float-card--bottom {
+    left: 0.5rem;
+    bottom: 8rem;
+    animation-delay: 700ms;
+  }
+
+  .linwood-hero__spark {
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 999px;
+    background: #69c957;
+    box-shadow: 0 0 0 0.55rem rgb(105 201 87 / 0.14);
+    animation: linwood-spark 3.6s ease-in-out infinite;
+  }
+
+  .linwood-hero__spark--one {
+    top: 4.5rem;
+    left: 7rem;
+  }
+
+  .linwood-hero__spark--two {
+    right: 3rem;
+    bottom: 9rem;
+    animation-delay: 850ms;
+  }
+
+  .linwood-hero__spark--three {
+    top: 50%;
+    right: 0.75rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    animation-delay: 1400ms;
+  }
+
+  @media (min-width: 900px) {
+    .linwood-hero__inner {
+      grid-template-columns: minmax(0, 1.04fr) minmax(28rem, 0.96fr);
+    }
+
+    .linwood-hero__inner {
+      padding-block: var(--linwood-space-20);
+    }
+
+    .linwood-hero h1.linwood-hero__title {
+      font-size: 4.75rem !important;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 899px) {
+    .linwood-hero h1.linwood-hero__title {
+      font-size: 3.5rem !important;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .linwood-hero {
+      min-height: 0;
+    }
+
+    .linwood-hero h1.linwood-hero__title {
+      font-size: 2.55rem !important;
+    }
+
+    .linwood-hero__body {
+      font-size: var(--linwood-text-md);
+    }
+
+    .linwood-hero__service-area {
+      font-size: var(--linwood-text-md);
+    }
+
+    .linwood-hero__button {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .linwood-hero__stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--linwood-space-3);
+    }
+
+    .linwood-hero__stats strong {
+      font-size: 1.45rem;
+    }
+
+    .linwood-hero__stats span {
+      font-size: var(--linwood-text-xs);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .linwood-hero::before,
+    .linwood-hero::after,
+    .linwood-hero__copy,
+    .linwood-hero__visual,
+    .linwood-hero__glow,
+    .linwood-hero__orbit,
+    .linwood-hero__shield,
+    .linwood-hero__float-card,
+    .linwood-hero__spark {
+      animation: none;
+    }
+  }
+
+  @keyframes linwood-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes linwood-hero-sheen {
+    from {
+      transform: translateX(-2rem);
+      opacity: 0.65;
+    }
+
+    to {
+      transform: translateX(2rem);
+      opacity: 1;
+    }
+  }
+
+  @keyframes linwood-float-soft {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0.75rem, -0.9rem, 0);
+    }
+  }
+
+  @keyframes linwood-spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes linwood-pulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.035);
+    }
+  }
+
+  @keyframes linwood-card-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-0.75rem);
+    }
+  }
+
+  @keyframes linwood-spark {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(0.85);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+  }
+}

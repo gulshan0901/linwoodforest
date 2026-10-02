@@ -5,6 +5,7 @@ A modern, responsive redesign of the Linwood Forest Insurance Group website buil
 ## 🌟 Features
 
 ### Modern Design
+
 - Professional color scheme (Blue & Green)
 - Modern typography and spacing
 - Smooth animations and hover effects
@@ -12,6 +13,7 @@ A modern, responsive redesign of the Linwood Forest Insurance Group website buil
 - Glassmorphism and gradient effects
 
 ### Key Sections
+
 1. **Header** - Responsive navigation with mobile menu, language toggle, contact info
 2. **Hero Section** - Compelling headline, call-to-action buttons, trust indicators
 3. **Services Section** - Insurance service cards with features and pricing
@@ -22,6 +24,7 @@ A modern, responsive redesign of the Linwood Forest Insurance Group website buil
 8. **Footer** - Comprehensive footer with links, social media, and company info
 
 ### Technical Features
+
 - **Next.js 15** - React framework for production
 - **Material UI (MUI)** - Modern React component library
 - **TypeScript** - Type-safe development
@@ -33,16 +36,20 @@ A modern, responsive redesign of the Linwood Forest Insurance Group website buil
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 16.x or later
 - npm or yarn
 
 ### Installation
+
 1. Install dependencies
+
 ```bash
 npm install
 ```
 
 2. Run the development server
+
 ```bash
 npm run dev
 ```
@@ -50,6 +57,7 @@ npm run dev
 3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Build for Production
+
 ```bash
 npm run build
 npm start
@@ -69,11 +77,13 @@ npm start
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary Blue**: #1565C0 - Trust, professionalism
-- **Secondary Green**: #388E3C - Growth, stability  
+- **Secondary Green**: #388E3C - Growth, stability
 - **Background**: #FAFAFA - Clean, modern
 
 ### Key Improvements Over Original
+
 - **Modern UI/UX** - Clean, professional design vs outdated original
 - **Mobile Responsive** - Perfect mobile experience
 - **Better Performance** - Fast loading times and smooth interactions
@@ -82,13 +92,16 @@ npm start
 - **Interactive Elements** - Engaging animations and micro-interactions
 
 ## 📞 Contact Information
+
 **Linwood Forest Insurance Group**
+
 - Phone: (610) 572-7322
 - Email: sales@linwoodforest.com
 - Address: 3312 7th St. Unit 101, Whitehall, PA 18052
 
 ## 🏆 Mission
-*"Your Insurance....Our Priority"*
+
+_"Your Insurance....Our Priority"_
 
 As a veteran-owned business, we strive to properly protect our clients with personalized service and competitive rates.
 

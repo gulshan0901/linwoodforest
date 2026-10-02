@@ -1,0 +1,6 @@
+@layer linwood.components {
+  .linwood-button {
+    min-height: 2.875rem;
+    padding-inline: var(--linwood-space-5);
+  }
+}

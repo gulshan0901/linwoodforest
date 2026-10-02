@@ -1,0 +1,14 @@
+@layer linwood.components {
+  .linwood-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--linwood-space-4);
+  }
+
+  @media (min-width: 900px) {
+    .linwood-container {
+      padding-inline: var(--linwood-space-8);
+    }
+  }
+}

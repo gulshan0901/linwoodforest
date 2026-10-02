@@ -1,0 +1,123 @@
+@layer linwood.components {
+  .linwood-partners {
+    background:
+      radial-gradient(circle at 12% 12%, rgb(221 232 227 / 0.9), transparent 22rem),
+      radial-gradient(circle at 86% 18%, rgb(200 155 60 / 0.1), transparent 18rem),
+      var(--linwood-color-white);
+  }
+
+  .linwood-partners__heading {
+    max-width: 52rem;
+    margin: 0 auto var(--linwood-space-10);
+    text-align: center;
+  }
+
+  .linwood-partners__heading h2 {
+    background: linear-gradient(90deg, #1976b7, #2f9636);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .linwood-partners__heading p:last-child {
+    margin: var(--linwood-space-4) 0 0;
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-lg);
+    line-height: 1.55;
+  }
+
+  .linwood-partners__list {
+    display: grid;
+    gap: var(--linwood-space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .linwood-partners__logo {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    min-height: 8.25rem;
+    place-items: center;
+    border: 1px solid rgb(16 37 29 / 0.1);
+    border-radius: var(--linwood-radius-lg);
+    background:
+      linear-gradient(var(--linwood-color-white), var(--linwood-color-white)) padding-box,
+      linear-gradient(135deg, rgb(18 59 58 / 0.12), rgb(200 155 60 / 0.22)) border-box;
+    box-shadow: 0 18px 42px rgb(11 41 40 / 0.07);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .linwood-partners__logo::before {
+    content: '';
+    position: absolute;
+    inset: auto auto -2.25rem -2.25rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: rgb(200 155 60 / 0.12);
+    transition: transform 180ms ease;
+  }
+
+  .linwood-partners__logo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 35%, rgb(18 59 58 / 0.045));
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .linwood-partners__logo img {
+    position: relative;
+    z-index: 1;
+    width: min(78%, 12rem);
+    height: auto;
+    max-height: 4.75rem;
+    object-fit: contain;
+    filter: saturate(0.98) contrast(1.04);
+    transition:
+      filter 180ms ease,
+      transform 180ms ease;
+  }
+
+  .linwood-partners__logo:hover {
+    border-color: rgb(47 150 54 / 0.24);
+    box-shadow: 0 22px 44px rgb(11 41 40 / 0.1);
+    transform: translateY(-4px);
+  }
+
+  .linwood-partners__logo:hover::before {
+    transform: scale(1.2);
+  }
+
+  .linwood-partners__logo:hover::after {
+    opacity: 1;
+  }
+
+  .linwood-partners__logo:hover img {
+    filter: saturate(1.1) contrast(1.08);
+    transform: scale(1.035);
+  }
+
+  @media (min-width: 520px) {
+    .linwood-partners__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 680px) {
+    .linwood-partners__list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 519px) {
+    .linwood-partners__logo {
+      min-height: 7rem;
+    }
+  }
+}

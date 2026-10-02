@@ -1,0 +1,212 @@
+[
+  {
+    "source": "/petinsurance/",
+    "destination": "/en/personal-insurance/pet-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/dave-lin/",
+    "destination": "/en/our-team/dave-lin",
+    "permanent": true
+  },
+  {
+    "source": "/ryan",
+    "destination": "/en/our-team/ryan",
+    "permanent": true
+  },
+  {
+    "source": "/madeline/",
+    "destination": "/en/our-team/madeline-pizarro",
+    "permanent": true
+  },
+  {
+    "source": "/proposal/",
+    "destination": "/en/get-quote",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/get-insurance/",
+    "destination": "/en/get-quote",
+    "permanent": true
+  },
+  {
+    "source": "/5-security-tips-for-your-new-home/",
+    "destination": "/en/blog/5-security-tips-for-your-new-home",
+    "permanent": true
+  },
+  {
+    "source": "/a-little-savings-secret/",
+    "destination": "/en/blog/a-little-savings-secret",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-safely-store-your-stuff/",
+    "destination": "/en/blog/how-to-safely-store-your-stuff",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/home-insurance/",
+    "destination": "/en/personal-insurance/home-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/auto-insurance/",
+    "destination": "/en/personal-insurance/auto-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/business-auto-insurance/",
+    "destination": "/en/business-insurance/business-auto-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/business-owners-insurance/",
+    "destination": "/en/business-insurance/business-owners-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/contact/",
+    "destination": "/en/contact",
+    "permanent": true
+  },
+  {
+    "source": "/service-center/",
+    "destination": "/en/service-center",
+    "permanent": true
+  },
+  {
+    "source": "/about/",
+    "destination": "/en/about",
+    "permanent": true
+  },
+  {
+    "source": "/about/agency-story/",
+    "destination": "/en/about/agency-story",
+    "permanent": true
+  },
+  {
+    "source": "/about/carrier-team/",
+    "destination": "/en/about/carrier-team",
+    "permanent": true
+  },
+  {
+    "source": "/about/local-vendors/",
+    "destination": "/en/about/local-vendors",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/",
+    "destination": "/en/our-team",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/dave-lin/",
+    "destination": "/en/our-team/dave-lin",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/monique-merino/",
+    "destination": "/en/our-team/monique-merino",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/ryan/",
+    "destination": "/en/our-team/ryan",
+    "permanent": true
+  },
+  {
+    "source": "/our-team/madeline-pizarro/",
+    "destination": "/en/our-team/madeline-pizarro",
+    "permanent": true
+  },
+  {
+    "source": "/blog/",
+    "destination": "/en/blog",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/",
+    "destination": "/en/personal-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/condo-insurance/",
+    "destination": "/en/personal-insurance/condo-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/motorcycle-insurance/",
+    "destination": "/en/personal-insurance/motorcycle-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/flood-insurance/",
+    "destination": "/en/personal-insurance/flood-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/umbrella-insurance/",
+    "destination": "/en/personal-insurance/umbrella-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/personal-insurance/pet-insurance/",
+    "destination": "/en/personal-insurance/pet-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/",
+    "destination": "/en/business-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/general-liability-insurance/",
+    "destination": "/en/business-insurance/general-liability-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance/workers-compensation-insurance/",
+    "destination": "/en/business-insurance/workers-compensation-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/life-insurance/",
+    "destination": "/en/life-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/client-testimonials/",
+    "destination": "/en/client-testimonials",
+    "permanent": true
+  },
+  {
+    "source": "/realtors-and-lenders/",
+    "destination": "/en/realtors-and-lenders",
+    "permanent": true
+  },
+  {
+    "source": "/careers/",
+    "destination": "/en/careers",
+    "permanent": true
+  },
+  {
+    "source": "/get-quote/",
+    "destination": "/en/get-quote",
+    "permanent": true
+  },
+  {
+    "source": "/privacy-policy/",
+    "destination": "/en/privacy-policy",
+    "permanent": true
+  },
+  {
+    "source": "/privacy-policy-for-sms-communications/",
+    "destination": "/en/privacy-policy-for-sms-communications",
+    "permanent": true
+  },
+  {
+    "source": "/chn/:path*",
+    "destination": "/zh/:path*",
+    "permanent": true
+  }
+]

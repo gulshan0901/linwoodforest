@@ -1,0 +1,52 @@
+@layer linwood.components {
+  .linwood-analytics-consent {
+    position: fixed;
+    right: var(--linwood-space-4);
+    bottom: var(--linwood-space-4);
+    z-index: 1600;
+    display: grid;
+    width: min(38rem, calc(100vw - 2rem));
+    gap: var(--linwood-space-4);
+    border: 1px solid rgb(16 37 29 / 0.14);
+    border-radius: var(--linwood-radius-md);
+    background: var(--linwood-color-white);
+    box-shadow: var(--linwood-shadow-lg);
+    padding: var(--linwood-space-5);
+  }
+
+  .linwood-analytics-consent__copy {
+    display: grid;
+    gap: var(--linwood-space-2);
+  }
+
+  .linwood-analytics-consent__text {
+    color: var(--linwood-color-slate-700);
+    line-height: var(--linwood-leading-normal);
+    margin: 0;
+  }
+
+  .linwood-analytics-consent__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--linwood-space-2);
+  }
+
+  .linwood-analytics-consent__button {
+    min-width: 7rem;
+  }
+
+  .linwood-analytics-consent__dismiss {
+    margin-left: auto;
+  }
+
+  @media (max-width: 520px) {
+    .linwood-analytics-consent__button {
+      flex: 1 1 100%;
+    }
+
+    .linwood-analytics-consent__dismiss {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,189 @@
+@layer linwood.components {
+  .linwood-stats {
+    background:
+      radial-gradient(circle at 10% 18%, rgb(221 232 227 / 0.9), transparent 24rem),
+      radial-gradient(circle at 92% 16%, rgb(200 155 60 / 0.08), transparent 22rem),
+      linear-gradient(180deg, #fbfcfc 0%, var(--linwood-color-slate-50) 100%);
+  }
+
+  .linwood-stats__heading {
+    max-width: 52rem;
+    margin: 0 auto var(--linwood-space-12);
+    text-align: center;
+  }
+
+  .linwood-stats__heading h2 {
+    background: linear-gradient(90deg, #1976b7, #2f9636);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .linwood-stats__heading p {
+    margin: var(--linwood-space-5) 0 0;
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-xl);
+    line-height: 1.55;
+  }
+
+  .linwood-stats__grid {
+    display: grid;
+    gap: var(--linwood-space-6);
+    margin: 0;
+    padding: 0;
+  }
+
+  .linwood-stats__item {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    min-height: 24rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    background: var(--linwood-color-white);
+    box-shadow: 0 24px 62px rgb(11 41 40 / 0.1);
+    padding: var(--linwood-space-10) var(--linwood-space-6);
+    text-align: center;
+    transition:
+      transform 190ms ease,
+      box-shadow 190ms ease,
+      border-color 190ms ease;
+  }
+
+  .linwood-stats__item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 0.72), transparent 42%),
+      radial-gradient(circle at 50% 0, rgb(200 155 60 / 0.16), transparent 10rem);
+    opacity: 0;
+    transition: opacity 190ms ease;
+  }
+
+  .linwood-stats__item:hover {
+    border-color: rgb(200 155 60 / 0.28);
+    box-shadow: 0 34px 76px rgb(11 41 40 / 0.16);
+    transform: translateY(-6px);
+  }
+
+  .linwood-stats__item:hover::before {
+    opacity: 1;
+  }
+
+  .linwood-stats__item--featured {
+    border-color: rgb(25 118 210 / 0.22);
+  }
+
+  .linwood-stats__icon {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 6.75rem;
+    height: 6.75rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--linwood-color-sage-200);
+    color: var(--linwood-color-forest-900);
+    box-shadow:
+      inset 0 0 0 3px rgb(255 255 255 / 0.65),
+      0 18px 36px rgb(11 41 40 / 0.1);
+    transition: transform 190ms ease;
+  }
+
+  .linwood-stats__item:hover .linwood-stats__icon {
+    transform: scale(1.06);
+  }
+
+  .linwood-stats__icon svg {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+
+  .linwood-stats__value {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--linwood-space-8);
+    color: #1976d2;
+    font-size: 2.65rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .linwood-stats__label {
+    position: relative;
+    z-index: 1;
+    max-width: 13rem;
+    margin: var(--linwood-space-5) 0 0;
+    color: var(--linwood-color-slate-900);
+    font-size: var(--linwood-text-xl);
+    font-weight: 900;
+    line-height: 1.45;
+  }
+
+  .linwood-stats__description {
+    position: relative;
+    z-index: 1;
+    max-width: 16rem;
+    margin: var(--linwood-space-5) 0 0;
+    color: var(--linwood-color-slate-500);
+    font-size: var(--linwood-text-md);
+    line-height: 1.45;
+  }
+
+  .linwood-stats__item--green .linwood-stats__icon {
+    background: var(--linwood-color-sage-100);
+    color: #2f9636;
+  }
+
+  .linwood-stats__item--green .linwood-stats__value {
+    color: #2f9636;
+  }
+
+  .linwood-stats__item--orange .linwood-stats__icon,
+  .linwood-stats__item--orange .linwood-stats__value {
+    color: var(--linwood-color-amber-600);
+  }
+
+  .linwood-stats__item--orange .linwood-stats__icon {
+    background: #f5ead0;
+  }
+
+  .linwood-stats__item--red .linwood-stats__icon,
+  .linwood-stats__item--red .linwood-stats__value {
+    color: #d83232;
+  }
+
+  .linwood-stats__item--red .linwood-stats__icon {
+    background: #fff1f1;
+  }
+
+  @media (min-width: 760px) {
+    .linwood-stats__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1180px) {
+    .linwood-stats__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .linwood-stats__heading {
+      margin-bottom: var(--linwood-space-8);
+    }
+
+    .linwood-stats__heading p {
+      font-size: var(--linwood-text-lg);
+    }
+
+    .linwood-stats__item {
+      min-height: auto;
+      padding: var(--linwood-space-8) var(--linwood-space-5);
+    }
+  }
+}

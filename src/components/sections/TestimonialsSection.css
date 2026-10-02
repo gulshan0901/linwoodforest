@@ -1,0 +1,271 @@
+@layer linwood.components {
+  .linwood-testimonials {
+    background:
+      radial-gradient(circle at 12% 15%, rgb(221 232 227 / 0.75), transparent 22rem),
+      radial-gradient(circle at 88% 18%, rgb(200 155 60 / 0.07), transparent 20rem),
+      var(--linwood-color-white);
+  }
+
+  .linwood-testimonials__heading {
+    display: grid;
+    justify-items: center;
+    max-width: 50rem;
+    margin: 0 auto var(--linwood-space-10);
+    text-align: center;
+  }
+
+  .linwood-testimonials__heading h2 {
+    background: linear-gradient(90deg, #1976b7, #2f9636);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .linwood-testimonials__heading > p {
+    margin: var(--linwood-space-5) 0 0;
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-xl);
+    line-height: 1.55;
+  }
+
+  .linwood-testimonials__rating {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--linwood-space-4);
+    margin-top: var(--linwood-space-8);
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-md);
+  }
+
+  .linwood-testimonials__stars,
+  .linwood-testimonials__card-stars {
+    display: inline-flex;
+    color: #f5a400;
+  }
+
+  .linwood-testimonials__stars svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .linwood-testimonials__rating strong {
+    color: #050b18;
+    font-size: var(--linwood-text-xl);
+    font-weight: 900;
+  }
+
+  .linwood-testimonials__controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--linwood-space-4);
+    margin-bottom: var(--linwood-space-8);
+  }
+
+  .linwood-testimonials__controls .MuiIconButton-root {
+    width: 3.4rem;
+    height: 3.4rem;
+    background: var(--linwood-color-white);
+    color: var(--linwood-color-slate-500);
+    box-shadow: 0 14px 32px rgb(11 41 40 / 0.14);
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .linwood-testimonials__controls .MuiIconButton-root:hover,
+  .linwood-testimonials__controls .MuiIconButton-root:focus-visible {
+    background: #1976d2;
+    color: var(--linwood-color-white);
+    transform: translateY(-2px);
+  }
+
+  .linwood-testimonials__grid {
+    display: grid;
+    gap: var(--linwood-space-8);
+    animation: linwood-testimonial-slide 320ms ease both;
+  }
+
+  .linwood-testimonials__card {
+    position: relative;
+    overflow: hidden;
+    min-height: 35rem;
+    border: 0;
+    border-radius: var(--linwood-radius-lg);
+    background: var(--linwood-color-white);
+    box-shadow: 0 28px 70px rgb(11 41 40 / 0.11);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .linwood-testimonials__card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.35rem;
+    background: linear-gradient(90deg, #1976d2, #2f9636);
+  }
+
+  .linwood-testimonials__card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 8%, rgb(25 118 210 / 0.08), transparent 10rem),
+      linear-gradient(145deg, transparent 50%, rgb(47 150 54 / 0.05));
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .linwood-testimonials__card:hover {
+    box-shadow: 0 34px 78px rgb(11 41 40 / 0.15);
+    transform: translateY(-5px);
+  }
+
+  .linwood-testimonials__card:hover::after {
+    opacity: 1;
+  }
+
+  .linwood-testimonials__card .MuiCardContent-root {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: inherit;
+    padding: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .linwood-testimonials__mark {
+    color: #1769c2;
+    font-size: 3rem;
+  }
+
+  .linwood-testimonials__card-stars {
+    margin-top: var(--linwood-space-8);
+  }
+
+  .linwood-testimonials__card-stars svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .linwood-testimonials__quote {
+    margin: var(--linwood-space-8) 0 0;
+    color: #20242d;
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .linwood-testimonials__person {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--linwood-space-4);
+    margin-top: auto;
+    padding-top: var(--linwood-space-8);
+  }
+
+  .linwood-testimonials__avatar {
+    width: 4rem;
+    height: 4rem;
+    background: var(--linwood-color-sage-200);
+    color: var(--linwood-color-slate-900);
+    font-size: 1.45rem;
+    box-shadow: 0 12px 26px rgb(11 41 40 / 0.1);
+  }
+
+  .linwood-testimonials__author,
+  .linwood-testimonials__location,
+  .linwood-testimonials__date {
+    margin: 0;
+  }
+
+  .linwood-testimonials__author {
+    color: #20242d;
+    font-weight: 900;
+  }
+
+  .linwood-testimonials__location {
+    margin-top: var(--linwood-space-1);
+    color: #005ecb;
+  }
+
+  .linwood-testimonials__date {
+    margin-top: var(--linwood-space-1);
+    color: var(--linwood-color-slate-500);
+  }
+
+  .linwood-testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--linwood-space-3);
+    margin-top: var(--linwood-space-8);
+  }
+
+  .linwood-testimonials__dots button {
+    width: 0.85rem;
+    height: 0.85rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(39 51 51 / 0.28);
+    cursor: pointer;
+    padding: 0;
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease,
+      width 180ms ease;
+  }
+
+  .linwood-testimonials__dots button:hover,
+  .linwood-testimonials__dots button:focus-visible {
+    background: rgb(25 118 210 / 0.65);
+    outline: none;
+    transform: scale(1.12);
+  }
+
+  .linwood-testimonials__dots .linwood-testimonials__dot--active {
+    width: 2.2rem;
+    border-radius: 999px;
+    background: #1976d2;
+  }
+
+  @keyframes linwood-testimonial-slide {
+    from {
+      opacity: 0;
+      transform: translateX(1rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .linwood-testimonials__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .linwood-testimonials__heading > p {
+      font-size: var(--linwood-text-lg);
+    }
+
+    .linwood-testimonials__stars svg {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+
+    .linwood-testimonials__controls {
+      margin-bottom: var(--linwood-space-6);
+    }
+
+    .linwood-testimonials__card {
+      min-height: 0;
+    }
+  }
+}

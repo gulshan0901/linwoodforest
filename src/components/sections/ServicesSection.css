@@ -1,0 +1,224 @@
+@layer linwood.components {
+  .linwood-services__heading {
+    position: relative;
+    max-width: 44rem;
+    margin: 0 auto var(--linwood-space-12);
+    text-align: center;
+  }
+
+  .linwood-services__heading h2 {
+    background: linear-gradient(90deg, #1976b7, #2f9636);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .linwood-services__heading::after {
+    content: 'We work directly with top insurance companies to find you the most competitive and comprehensive coverage that fits your unique needs.';
+    display: block;
+    max-width: 40rem;
+    margin: var(--linwood-space-5) auto 0;
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-lg);
+    line-height: 1.55;
+  }
+
+  .linwood-services__grid {
+    display: grid;
+    gap: var(--linwood-space-5);
+  }
+
+  .linwood-services__card {
+    position: relative;
+    overflow: hidden;
+    border-color: rgb(25 118 183 / 0.18);
+    border-radius: 0.75rem;
+  }
+
+  .linwood-services__card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 12%, rgb(200 155 60 / 0.15), transparent 10rem),
+      linear-gradient(135deg, rgb(18 59 58 / 0.06), transparent 44%);
+    opacity: 0;
+    transition: opacity 190ms ease;
+  }
+
+  .linwood-services__card:hover::before {
+    opacity: 1;
+  }
+
+  .linwood-services__card-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--linwood-space-5);
+    height: 100%;
+    min-height: 31rem;
+    padding: var(--linwood-space-8);
+  }
+
+  .linwood-services__badge {
+    position: absolute;
+    top: var(--linwood-space-5);
+    right: var(--linwood-space-5);
+    border-radius: 0.35rem;
+    background: #1976d2;
+    color: var(--linwood-color-white);
+    font-size: var(--linwood-text-xs);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    padding: 0.42rem 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .linwood-services__badge--green {
+    background: #43a047;
+  }
+
+  .linwood-services__badge--sky {
+    background: #1296db;
+  }
+
+  .linwood-services__icon {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9f2ff;
+    color: #1976d2;
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.72),
+      0 16px 32px rgb(11 41 40 / 0.1);
+    transition:
+      transform 190ms ease,
+      box-shadow 190ms ease;
+  }
+
+  .linwood-services__icon svg {
+    font-size: 2rem;
+  }
+
+  .linwood-services__card:hover .linwood-services__icon {
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.8),
+      0 20px 38px rgb(11 41 40 / 0.16);
+    transform: translateY(-4px) scale(1.04);
+  }
+
+  .linwood-services__card:nth-child(2) .linwood-services__icon {
+    background: #e9f5ea;
+    color: #43a047;
+  }
+
+  .linwood-services__card:nth-child(3) .linwood-services__icon {
+    background: #eaf7ff;
+    color: #1296db;
+  }
+
+  .linwood-services__card h3 {
+    margin-top: var(--linwood-space-8);
+    color: var(--linwood-color-slate-900);
+    font-weight: 900;
+  }
+
+  .linwood-services__description {
+    color: var(--linwood-color-slate-700);
+    line-height: var(--linwood-leading-normal);
+  }
+
+  .linwood-services__includes {
+    margin: var(--linwood-space-4) 0 0;
+    color: #1976d2;
+    font-size: var(--linwood-text-sm);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .linwood-services__includes--green {
+    color: #43a047;
+  }
+
+  .linwood-services__includes--sky {
+    color: #1296db;
+  }
+
+  .linwood-services__coverage {
+    display: grid;
+    gap: var(--linwood-space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .linwood-services__coverage li {
+    display: flex;
+    align-items: center;
+    gap: var(--linwood-space-2);
+    color: var(--linwood-color-slate-700);
+    font-size: var(--linwood-text-sm);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .linwood-services__coverage svg {
+    flex: 0 0 auto;
+    color: #1976d2;
+    font-size: 1.05rem;
+  }
+
+  .linwood-services__card:nth-child(2) .linwood-services__coverage svg {
+    color: #43a047;
+  }
+
+  .linwood-services__card:nth-child(3) .linwood-services__coverage svg {
+    color: #1296db;
+  }
+
+  .linwood-services__coverage .linwood-services__more {
+    padding-left: 1.65rem;
+    color: #1976d2;
+  }
+
+  .linwood-services__card:nth-child(2) .linwood-services__more {
+    color: #43a047;
+  }
+
+  .linwood-services__card:nth-child(3) .linwood-services__more {
+    color: #1296db;
+  }
+
+  .linwood-services__card .linwood-button {
+    justify-self: stretch;
+    margin-top: auto;
+    border-color: #1976d2;
+    color: #1976d2;
+    font-weight: 900;
+  }
+
+  .linwood-services__card:nth-child(2) .linwood-button {
+    border-color: #43a047;
+    color: #43a047;
+  }
+
+  .linwood-services__card:nth-child(3) .linwood-button {
+    border-color: #1296db;
+    color: #1296db;
+  }
+
+  .linwood-services__card .linwood-button:hover,
+  .linwood-services__card .linwood-button:focus-visible {
+    background: rgb(25 118 210 / 0.08);
+    color: #1976d2;
+  }
+
+  @media (min-width: 820px) {
+    .linwood-services__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

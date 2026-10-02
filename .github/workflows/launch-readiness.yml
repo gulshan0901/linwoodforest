@@ -1,0 +1,61 @@
+name: Launch readiness
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  launch-readiness:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Format
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npm run type-check
+
+      - name: Build
+        run: npm run build
+
+      - name: Start production server
+        run: |
+          npm run start > next-server.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://localhost:3000/en > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat next-server.log
+          exit 1
+
+      - name: Redirect audit
+        run: npm run audit:redirects
+
+      - name: SEO coverage audit
+        run: npm run audit:seo
+
+      - name: axe smoke scan
+        run: npm run audit:a11y
+
+      - name: Lighthouse CI
+        run: npm run audit:lighthouse

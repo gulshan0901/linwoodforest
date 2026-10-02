@@ -1,0 +1,25 @@
+@layer linwood.utilities {
+  .linwood-skip-link {
+    position: fixed;
+    left: var(--linwood-space-4);
+    top: var(--linwood-space-4);
+    z-index: 2000;
+    transform: translateY(-150%);
+    border-radius: var(--linwood-radius-sm);
+    background: var(--linwood-color-forest-900);
+    color: var(--linwood-color-white);
+    padding: var(--linwood-space-3) var(--linwood-space-4);
+    text-decoration: none;
+  }
+
+  .linwood-skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .linwood-eyebrow {
+    color: var(--linwood-color-amber-600);
+    font-size: var(--linwood-text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

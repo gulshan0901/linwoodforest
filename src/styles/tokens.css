@@ -1,0 +1,50 @@
+@layer mui, linwood.tokens, linwood.base, linwood.components, linwood.utilities;
+
+@layer linwood.tokens {
+  :root {
+    --linwood-color-forest-950: #0b2928;
+    --linwood-color-forest-900: #123b3a;
+    --linwood-color-forest-800: #1d5551;
+    --linwood-color-sage-200: #dde8e3;
+    --linwood-color-sage-100: #edf3f0;
+    --linwood-color-slate-900: #273333;
+    --linwood-color-slate-700: #42504f;
+    --linwood-color-slate-500: #667573;
+    --linwood-color-slate-100: #e7ece9;
+    --linwood-color-slate-50: #f8f7f3;
+    --linwood-color-amber-600: #a77d2d;
+    --linwood-color-amber-500: #c89b3c;
+    --linwood-color-blue-700: #123b3a;
+    --linwood-color-white: #ffffff;
+    --linwood-color-danger: #a33a30;
+    --linwood-space-1: 0.25rem;
+    --linwood-space-2: 0.5rem;
+    --linwood-space-3: 0.75rem;
+    --linwood-space-4: 1rem;
+    --linwood-space-5: 1.25rem;
+    --linwood-space-6: 1.5rem;
+    --linwood-space-8: 2rem;
+    --linwood-space-10: 2.5rem;
+    --linwood-space-12: 3rem;
+    --linwood-space-16: 4rem;
+    --linwood-space-20: 5rem;
+    --linwood-radius-sm: 0.375rem;
+    --linwood-radius-md: 0.5rem;
+    --linwood-radius-lg: 0.75rem;
+    --linwood-shadow-sm: 0 1px 2px rgb(11 41 40 / 0.08);
+    --linwood-shadow-md: 0 14px 35px rgb(11 41 40 / 0.12);
+    --linwood-shadow-lg: 0 24px 70px rgb(11 41 40 / 0.16);
+    --linwood-font-sans: 'Inter', 'Noto Sans SC', Arial, sans-serif;
+    --linwood-font-display: 'Inter', 'Noto Sans SC', Arial, sans-serif;
+    --linwood-text-xs: 0.75rem;
+    --linwood-text-sm: 0.875rem;
+    --linwood-text-md: 1rem;
+    --linwood-text-lg: 1.125rem;
+    --linwood-text-xl: 1.35rem;
+    --linwood-text-2xl: 1.75rem;
+    --linwood-text-3xl: 2.25rem;
+    --linwood-text-4xl: 3rem;
+    --linwood-leading-tight: 1.12;
+    --linwood-leading-normal: 1.55;
+  }
+}

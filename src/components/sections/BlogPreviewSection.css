@@ -1,0 +1,173 @@
+@layer linwood.components {
+  .linwood-blog {
+    background:
+      linear-gradient(180deg, var(--linwood-color-white) 0%, #f7faf9 100%),
+      var(--linwood-color-white);
+  }
+
+  .linwood-blog__heading {
+    display: grid;
+    justify-items: center;
+    max-width: 46rem;
+    margin: 0 auto var(--linwood-space-10);
+    text-align: center;
+  }
+
+  .linwood-blog__heading h2 {
+    margin-top: var(--linwood-space-3);
+    background: linear-gradient(90deg, #1976b7, #2f9636);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .linwood-blog__grid {
+    display: grid;
+    gap: var(--linwood-space-6);
+  }
+
+  .linwood-blog__grid .linwood-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(11 41 40 / 0.08);
+    border-radius: var(--linwood-radius-lg);
+    box-shadow: 0 24px 62px rgb(11 41 40 / 0.09);
+    transition:
+      border-color 190ms ease,
+      box-shadow 190ms ease,
+      transform 190ms ease;
+  }
+
+  .linwood-blog__grid .linwood-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 0, rgb(200 155 60 / 0.18), transparent 10rem),
+      linear-gradient(150deg, rgb(25 118 210 / 0.08), transparent 48%);
+    opacity: 0.68;
+    transition: opacity 190ms ease;
+  }
+
+  .linwood-blog__grid .linwood-card::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 0.3rem;
+    background: linear-gradient(90deg, #1976d2, #2f9636, var(--linwood-color-amber-600));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 190ms ease;
+  }
+
+  .linwood-blog__grid .linwood-card:hover {
+    border-color: rgb(25 118 210 / 0.18);
+    box-shadow: 0 34px 78px rgb(11 41 40 / 0.14);
+    transform: translateY(-5px);
+  }
+
+  .linwood-blog__grid .linwood-card:hover::before {
+    opacity: 1;
+  }
+
+  .linwood-blog__grid .linwood-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .linwood-blog__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    min-height: 100%;
+    gap: var(--linwood-space-4);
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+  }
+
+  .linwood-blog__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--linwood-space-2);
+  }
+
+  .linwood-blog__tag,
+  .linwood-blog__date {
+    display: inline-flex;
+    width: max-content;
+    border-radius: 999px;
+    font-size: var(--linwood-text-sm);
+    font-weight: 900;
+    padding: var(--linwood-space-1) var(--linwood-space-3);
+  }
+
+  .linwood-blog__tag {
+    background: rgb(25 118 210 / 0.1);
+    color: #1769c2;
+  }
+
+  .linwood-blog__date {
+    background: rgb(200 155 60 / 0.12);
+    color: var(--linwood-color-amber-600);
+  }
+
+  .linwood-blog__content h3 {
+    margin: var(--linwood-space-2) 0 0;
+    color: var(--linwood-color-slate-900);
+    font-weight: 900;
+    line-height: 1.18;
+  }
+
+  .linwood-blog__excerpt {
+    color: var(--linwood-color-slate-700);
+    line-height: var(--linwood-leading-normal);
+  }
+
+  .linwood-blog__content .linwood-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--linwood-space-2);
+    justify-self: start;
+    margin-top: auto;
+    font-weight: 900;
+  }
+
+  .linwood-blog__content .linwood-button svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 180ms ease;
+  }
+
+  .linwood-blog__grid .linwood-card:hover .linwood-button svg {
+    transform: translateX(0.25rem);
+  }
+
+  @media (min-width: 820px) {
+    .linwood-blog__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .linwood-blog__card--featured {
+      grid-column: span 2;
+    }
+
+    .linwood-blog__card--featured .linwood-blog__content {
+      min-height: 23rem;
+      align-content: center;
+    }
+
+    .linwood-blog__card--featured .linwood-blog__content h3 {
+      max-width: 34rem;
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+    }
+
+    .linwood-blog__card--featured .linwood-blog__excerpt {
+      max-width: 34rem;
+      font-size: var(--linwood-text-lg);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .linwood-blog__heading {
+      margin-bottom: var(--linwood-space-8);
+    }
+  }
+}

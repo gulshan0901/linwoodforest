@@ -1,0 +1,122 @@
+@layer linwood.components {
+  .linwood-static-page {
+    background: var(--linwood-color-slate-50);
+  }
+
+  .linwood-static-page__hero {
+    background:
+      linear-gradient(90deg, rgb(16 37 29 / 0.94), rgb(23 74 58 / 0.86)),
+      url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=1800&q=80')
+        center / cover;
+    color: var(--linwood-color-white);
+    padding-block: var(--linwood-space-14);
+  }
+
+  .linwood-static-page__hero-inner {
+    max-width: 52rem;
+  }
+
+  .linwood-static-page__hero .linwood-eyebrow {
+    color: var(--linwood-color-gold-300);
+  }
+
+  .linwood-static-page__intro {
+    max-width: 44rem;
+    margin-top: var(--linwood-space-4);
+    color: rgb(255 255 255 / 0.86);
+    font-size: var(--linwood-text-lg);
+    line-height: var(--linwood-leading-relaxed);
+  }
+
+  .linwood-static-page__section {
+    scroll-margin-top: 7rem;
+  }
+
+  .linwood-static-page__section-copy {
+    max-width: 48rem;
+  }
+
+  .linwood-static-page__body,
+  .linwood-static-page__card-body,
+  .linwood-static-page__list {
+    color: var(--linwood-color-slate-700);
+    line-height: var(--linwood-leading-relaxed);
+  }
+
+  .linwood-static-page__body {
+    margin-top: var(--linwood-space-4);
+    font-size: var(--linwood-text-lg);
+  }
+
+  .linwood-static-page__list {
+    display: grid;
+    gap: var(--linwood-space-3);
+    margin: var(--linwood-space-5) 0 0;
+    padding-left: var(--linwood-space-5);
+  }
+
+  .linwood-static-page__cards {
+    display: grid;
+    gap: var(--linwood-space-5);
+    margin-top: var(--linwood-space-8);
+  }
+
+  .linwood-static-page__card-content {
+    display: grid;
+    gap: var(--linwood-space-4);
+    height: 100%;
+  }
+
+  .linwood-static-page__card-link {
+    align-self: end;
+    color: var(--linwood-color-forest-700);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .linwood-static-page__card-link:hover {
+    text-decoration: underline;
+  }
+
+  .linwood-static-page__cta .linwood-container {
+    display: grid;
+    gap: var(--linwood-space-6);
+    align-items: center;
+  }
+
+  .linwood-static-page__cta-copy {
+    max-width: 48rem;
+  }
+
+  .linwood-static-page__cta-copy p {
+    color: rgb(255 255 255 / 0.82);
+    font-size: var(--linwood-text-lg);
+    line-height: var(--linwood-leading-relaxed);
+  }
+
+  .linwood-static-page__cta .linwood-button {
+    justify-self: start;
+    background: var(--linwood-color-gold-500);
+    color: var(--linwood-color-forest-900);
+  }
+
+  @media (min-width: 760px) {
+    .linwood-static-page__hero {
+      padding-block: var(--linwood-space-20);
+    }
+
+    .linwood-static-page__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .linwood-static-page__cta .linwood-container {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .linwood-static-page__cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

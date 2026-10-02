@@ -1,0 +1,121 @@
+@layer linwood.components {
+  .linwood-mobile-nav__trigger {
+    display: inline-grid;
+    width: 3.15rem;
+    height: 3.15rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #185ab3, #2f9636);
+    color: var(--linwood-color-white);
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 14px 30px rgb(24 90 179 / 0.22);
+    transition:
+      transform 170ms ease,
+      box-shadow 170ms ease;
+  }
+
+  .linwood-mobile-nav__trigger:hover {
+    box-shadow: 0 18px 36px rgb(24 90 179 / 0.3);
+    transform: translateY(-1px);
+  }
+
+  .linwood-mobile-nav {
+    width: min(86vw, 23rem);
+    min-height: 100%;
+    background:
+      radial-gradient(circle at 100% 0, rgb(47 150 54 / 0.13), transparent 12rem),
+      var(--linwood-color-white);
+    padding: var(--linwood-space-5);
+  }
+
+  .linwood-mobile-nav__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--linwood-space-4);
+  }
+
+  .linwood-mobile-nav__brand {
+    color: #185ab3;
+    font-weight: 900;
+  }
+
+  .linwood-mobile-nav__list {
+    display: grid;
+    gap: var(--linwood-space-3);
+    margin-block: var(--linwood-space-6);
+    padding: 0;
+  }
+
+  .linwood-mobile-nav__item {
+    overflow: hidden;
+    border: 1px solid rgb(18 59 58 / 0.1);
+    border-radius: 1rem;
+    background: rgb(255 255 255 / 0.86);
+    box-shadow: 0 14px 32px rgb(11 41 40 / 0.07);
+  }
+
+  .linwood-mobile-nav__link {
+    color: var(--linwood-color-slate-900) !important;
+    font-weight: 900 !important;
+    padding: 0.9rem 1rem !important;
+  }
+
+  .linwood-mobile-nav__link svg {
+    color: #2f9636;
+  }
+
+  .linwood-mobile-nav__subnav {
+    display: grid;
+    gap: var(--linwood-space-1);
+    border-top: 1px solid rgb(18 59 58 / 0.08);
+    background: var(--linwood-color-slate-50);
+    padding: var(--linwood-space-3);
+  }
+
+  .linwood-mobile-nav__subnav p {
+    margin: 0 0 var(--linwood-space-2);
+    color: #185ab3;
+    font-size: var(--linwood-text-xs);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .linwood-mobile-nav__subnav a {
+    display: grid;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    align-items: center;
+    gap: var(--linwood-space-2);
+    border-radius: 0.75rem;
+    color: var(--linwood-color-slate-900);
+    font-size: var(--linwood-text-sm);
+    font-weight: 750;
+    padding: 0.58rem 0.65rem;
+    text-decoration: none;
+  }
+
+  .linwood-mobile-nav__subnav a:hover,
+  .linwood-mobile-nav__subnav a:focus-visible {
+    background: var(--linwood-color-white);
+    color: #185ab3;
+  }
+
+  .linwood-mobile-nav__subnav span {
+    display: inline-grid;
+    width: 1.75rem;
+    height: 1.75rem;
+    place-items: center;
+    border-radius: 0.55rem;
+    background: var(--linwood-color-white);
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 1500px) {
+    .linwood-mobile-nav__trigger {
+      display: none;
+    }
+  }
+}
