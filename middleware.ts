@@ -13,6 +13,8 @@ function buildCsp(nonce: string) {
     `'nonce-${nonce}'`,
     isDevelopment ? "'unsafe-eval'" : undefined,
     'https://www.googletagmanager.com',
+    'https://www.google.com/recaptcha/',
+    'https://www.gstatic.com/recaptcha/',
   ]
     .filter(Boolean)
     .join(' ');
@@ -21,6 +23,8 @@ function buildCsp(nonce: string) {
     'https://www.google-analytics.com',
     'https://analytics.google.com',
     'https://stats.g.doubleclick.net',
+    'https://www.google.com/recaptcha/',
+    'https://www.gstatic.com/recaptcha/',
     isDevelopment ? 'ws://localhost:*' : undefined,
     isDevelopment ? 'ws://127.0.0.1:*' : undefined,
   ]
@@ -31,10 +35,10 @@ function buildCsp(nonce: string) {
     "default-src 'self'",
     `script-src ${scriptSources}`,
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: https://images.unsplash.com https://placehold.co https://www.google-analytics.com https://www.googletagmanager.com",
+    "img-src 'self' data: https://images.unsplash.com https://placehold.co https://www.google-analytics.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/",
     "font-src 'self'",
     `connect-src ${connectSources}`,
-    "frame-src 'self' https://*.ezlynx.com https://*.term4sale.com https://www.youtube.com https://www.youtube-nocookie.com",
+    "frame-src 'self' https://*.ezlynx.com https://*.term4sale.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
     "form-action 'self'",
     "base-uri 'self'",
     "frame-ancestors 'none'",

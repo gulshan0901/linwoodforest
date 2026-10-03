@@ -290,42 +290,6 @@
     color: #185ab3;
   }
 
-  .linwood-contact-page__service {
-    padding-block: clamp(4.5rem, 8vw, 7rem);
-  }
-
-  .linwood-contact-page__service-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .linwood-contact-page__service-inner > div {
-    max-width: 45rem;
-  }
-
-  .linwood-contact-page__service h2 {
-    color: #123b3a;
-  }
-
-  .linwood-contact-page__service-inner > div > p:last-child {
-    color: var(--linwood-color-slate-700);
-    line-height: 1.75;
-  }
-
-  .linwood-contact-page__service-link {
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: var(--linwood-space-2);
-    border-bottom: 1px solid rgb(24 90 179 / 0.35);
-    color: #185ab3;
-    font-weight: 850;
-    padding-block: 0.5rem;
-    text-decoration: none;
-  }
-
   @media (min-width: 860px) {
     .linwood-contact-page__hero-inner {
       grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
@@ -342,11 +306,6 @@
   }
 
   @media (max-width: 640px) {
-    .linwood-contact-page__service-inner {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
     .linwood-contact-page__office-card {
       min-height: 18rem;
     }

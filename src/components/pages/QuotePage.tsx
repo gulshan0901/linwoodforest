@@ -12,6 +12,7 @@ import type { Locale } from '@/i18n/routing';
 import { siteConfig } from '@/lib/config/site';
 
 import { Container } from '../ui/Container';
+import { ContactRequestForm } from './ContactRequestForm';
 import './QuotePage.css';
 
 type QuotePageProps = {
@@ -120,6 +121,8 @@ export function QuotePage({ locale }: QuotePageProps) {
           </div>
         </Container>
       </section>
+
+      <ContactRequestForm formType="quote" locale={locale} />
 
       <section className="linwood-quote-page__coverage">
         <Container>

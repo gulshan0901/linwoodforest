@@ -10,6 +10,7 @@ import type { Locale } from '@/i18n/routing';
 import { siteConfig } from '@/lib/config/site';
 
 import { Container } from '../ui/Container';
+import { ContactRequestForm } from './ContactRequestForm';
 import './ContactPage.css';
 
 type ContactPageProps = {
@@ -26,12 +27,8 @@ const content = {
     phoneLabel: 'Call our team',
     emailLabel: 'Email',
     directions: 'Get directions',
-    serviceTitle: 'Service request',
-    serviceBody:
-      'Tell us what you need and one of our insurance experts will help you find the right next step. Call or email us and we will get back to you as soon as we can.',
     callCta: 'Call Linwood Forest',
     emailCta: 'Email our team',
-    reassurance: 'Your Insurance...Our Priority',
     secondPhone: 'Office',
   },
   zh: {
@@ -43,12 +40,8 @@ const content = {
     phoneLabel: '致电团队',
     emailLabel: '电子邮箱',
     directions: '查看路线',
-    serviceTitle: '客户服务请求',
-    serviceBody:
-      '告诉我们您需要什么，我们的保险专家会协助您了解下一步。请致电或发送邮件，我们会尽快回复。',
     callCta: '致电 Linwood Forest',
     emailCta: '发送邮件',
-    reassurance: '您的保险……我们的优先事项',
     secondPhone: '办公室',
   },
 } as const;
@@ -150,22 +143,7 @@ export function ContactPage({ locale }: ContactPageProps) {
           </a>
         </Container>
       </section>
-
-      <section className="linwood-contact-page__service">
-        <Container className="linwood-contact-page__service-inner">
-          <div>
-            <p className="linwood-contact-page__eyebrow">{text.reassurance}</p>
-            <Typography component="h2" variant="h2">
-              {text.serviceTitle}
-            </Typography>
-            <Typography component="p">{text.serviceBody}</Typography>
-          </div>
-          <a className="linwood-contact-page__service-link" href={siteConfig.emailHref}>
-            {text.emailCta}
-            <ArrowForwardIcon aria-hidden="true" />
-          </a>
-        </Container>
-      </section>
+      <ContactRequestForm formType="contact" locale={locale} />
     </main>
   );
 }

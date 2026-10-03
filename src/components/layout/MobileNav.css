@@ -85,14 +85,14 @@
   }
 
   .linwood-mobile-nav__subnav a {
-    display: grid;
-    grid-template-columns: 1.75rem minmax(0, 1fr);
+    display: flex;
     align-items: center;
     gap: var(--linwood-space-2);
     border-radius: 0.75rem;
     color: var(--linwood-color-slate-900);
     font-size: var(--linwood-text-sm);
     font-weight: 750;
+    min-width: 0;
     padding: 0.58rem 0.65rem;
     text-decoration: none;
   }
@@ -107,6 +107,7 @@
     display: inline-grid;
     width: 1.75rem;
     height: 1.75rem;
+    flex: 0 0 1.75rem;
     place-items: center;
     border-radius: 0.55rem;
     background: var(--linwood-color-white);

@@ -533,15 +533,15 @@ export const enStaticPages: StaticPage[] = [
       'Learn about Linwood Forest Insurance Group, an independent insurance agency based in Whitehall, PA.',
     eyebrow: 'About Linwood Forest',
     intro:
-      'Linwood Forest Insurance Group is an independent agency and brokerage firm based in the Lehigh Valley, serving clients across PA, NJ, DE, MD, VA, and DC.',
+      'Linwood Forest Insurance Group is an independent agency and brokerage firm based in the Lehigh Valley, PA. Although we are located in Pennsylvania, we are also licensed in New Jersey, Delaware, Virginia, Maryland, and Washington, D.C., with more states to come.',
     sections: [
       {
         heading: 'Independent agency, more choice',
-        body: 'Independent insurance agencies are best described with one word: choice. We represent multiple insurance companies, giving clients more options as their needs change over time.',
+        body: 'Independent insurance agencies are best described with one word: choice. Unlike captive companies such as Allstate, State Farm, or Farmers, which typically sell products from a single insurance company, we represent multiple insurance companies. We work with a number of A-rated companies, giving our clients more tools and options and helping us support them as their insurance needs change over time.',
       },
       {
         heading: 'History',
-        body: 'The agency officially opened its doors on January 15, 2014. Guided by our motto, “Your Insurance...Our Priority,” we combine practical technology with old-fashioned customer service.',
+        body: 'The Linwood Forest Insurance Group officially opened its doors on January 15, 2014. Guided by our agency motto, “Your Insurance...Our Priority,” we strive to provide our clients with the highest quality customer service as we protect their legacy and assets. Our agency has grown rapidly by combining old-fashioned customer service with the latest technology. Although our history is relatively short, our customer-centric business practices are built to help Linwood Forest stand the test of time.',
       },
     ],
     cta: contactCta,
