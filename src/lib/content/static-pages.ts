@@ -22,6 +22,9 @@ const aliases = new Map<string, string>([
   ['personal-insurance/umbrella', 'personal-insurance/umbrella-insurance'],
   ['personal-insurance/pet', 'personal-insurance/pet-insurance'],
   ['terms-and-conditions-sms', 'privacy-policy-for-sms-communications'],
+  ['about/client-testimonials', 'client-testimonials'],
+  ['about/careers', 'careers'],
+  ['about/careers-2', 'careers'],
 ]);
 
 function pagePath(slug: string[]) {

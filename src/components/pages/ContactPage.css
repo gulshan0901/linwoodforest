@@ -99,19 +99,20 @@
 
   .linwood-contact-page__button--primary {
     background: #185ab3;
-    color: #fff;
+    color: #fff !important;
     box-shadow: 0 12px 28px rgb(24 90 179 / 0.22);
   }
 
   .linwood-contact-page__button--primary:hover {
     background: #12498f;
+    color: #fff !important;
     box-shadow: 0 16px 34px rgb(24 90 179 / 0.28);
   }
 
   .linwood-contact-page__button--secondary {
     border-color: rgb(18 59 58 / 0.16);
     background: #fff;
-    color: #123b3a;
+    color: #123b3a !important;
   }
 
   .linwood-contact-page__button--secondary:hover {

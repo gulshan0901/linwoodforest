@@ -5,6 +5,76 @@
     "permanent": true
   },
   {
+    "source": "/monique-merino/",
+    "destination": "/en/our-team/monique-merino",
+    "permanent": true
+  },
+  {
+    "source": "/commercial-auto-insurance/",
+    "destination": "/en/business-insurance/business-auto-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/home-owners-insurance/",
+    "destination": "/en/personal-insurance/home-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/auto-insurance/",
+    "destination": "/en/personal-insurance/auto-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/business-insurance-quote/",
+    "destination": "/en/get-quote",
+    "permanent": true
+  },
+  {
+    "source": "/condo-co-op-insurance/",
+    "destination": "/en/personal-insurance/condo-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/renters-insurance/",
+    "destination": "/en/personal-insurance/renters-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/condo-co-op-landlord-insurance/",
+    "destination": "/en/personal-insurance/landlord-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/workers-compensation/",
+    "destination": "/en/business-insurance/workers-compensation-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/umbrella-insurance/",
+    "destination": "/en/personal-insurance/umbrella-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/dealer-plates-insurance/",
+    "destination": "/en/business-insurance/business-auto-insurance",
+    "permanent": true
+  },
+  {
+    "source": "/about/client-testimonials/",
+    "destination": "/en/client-testimonials",
+    "permanent": true
+  },
+  {
+    "source": "/about/careers/",
+    "destination": "/en/careers",
+    "permanent": true
+  },
+  {
+    "source": "/about/careers-2/",
+    "destination": "/en/careers",
+    "permanent": true
+  },
+  {
     "source": "/dave-lin/",
     "destination": "/en/our-team/dave-lin",
     "permanent": true

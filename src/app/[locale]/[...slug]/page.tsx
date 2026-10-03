@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { ContactPage } from '@/components/pages/ContactPage';
 import { QuotePage } from '@/components/pages/QuotePage';
+import { TeamPage } from '@/components/pages/TeamPage';
 import { StaticPageTemplate } from '@/components/templates/StaticPageTemplate';
 import type { Locale } from '@/i18n/routing';
 import { siteConfig } from '@/lib/config/site';
@@ -91,6 +92,14 @@ export async function generateMetadata({ params }: StaticRouteProps): Promise<Me
 
 export default async function StaticRoutePage({ params }: StaticRouteProps) {
   const { locale, slug } = await params;
+
+  if (slug[0] === 'our-team') {
+    if (slug.length > 2 || (slug.length === 2 && !getStaticPage(locale, slug))) {
+      notFound();
+    }
+
+    return <TeamPage locale={locale} slug={slug[1]} />;
+  }
 
   if (slug.length === 1 && slug[0] === 'contact') {
     return <ContactPage locale={locale} />;

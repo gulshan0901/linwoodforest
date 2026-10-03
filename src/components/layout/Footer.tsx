@@ -23,6 +23,7 @@ import './Footer.css';
 
 const footerLinks = [
   { label: 'Blog', href: '/blog' },
+  { label: 'Our Team', href: '/our-team' },
   { label: 'Service Center', href: '/service-center' },
   { label: 'Contact', href: '/contact' },
   { label: 'Get Quote', href: '/get-quote' },

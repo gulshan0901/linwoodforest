@@ -14,6 +14,517 @@ const productCta = {
   href: '/get-quote',
 };
 
+function insurancePage({
+  slug,
+  title,
+  intro,
+  description,
+  considerations,
+}: {
+  slug: string[];
+  title: string;
+  intro: string;
+  description: string;
+  considerations: string[];
+}): StaticPage {
+  return {
+    slug,
+    title,
+    description,
+    eyebrow: slug[0] === 'business-insurance' ? 'Business insurance' : 'Personal insurance',
+    intro,
+    sections: [
+      {
+        heading: 'Coverage to discuss',
+        body: 'Coverage, exclusions, and eligibility vary by policy and carrier. We can help you review your needs and compare available options.',
+        bullets: considerations,
+      },
+    ],
+    cta: productCta,
+  };
+}
+
+const additionalInsurancePages: StaticPage[] = [
+  insurancePage({
+    slug: ['personal-insurance', 'renters-insurance'],
+    title: 'Renters Insurance',
+    description: 'Renters insurance options for personal belongings and liability.',
+    intro:
+      'A renters policy can protect personal belongings and provide personal liability coverage while you rent a home or apartment.',
+    considerations: [
+      'Personal property limits',
+      'Loss of use',
+      'Personal liability',
+      'Deductibles',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'landlord-insurance'],
+    title: 'Landlord Insurance',
+    description: 'Insurance considerations for owners of rental properties.',
+    intro:
+      'Rental properties have different occupancy and liability exposures from owner-occupied homes. Review the property, rental activity, and applicable coverage with an agent.',
+    considerations: [
+      'Dwelling and other structures',
+      'Landlord-owned contents',
+      'Rental income',
+      'Liability and tenant requirements',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'watercraft-insurance'],
+    title: 'Watercraft Insurance',
+    description: 'Insurance options for boats and other recreational watercraft.',
+    intro:
+      'Whether you use a boat seasonally or spend much of the summer on the water, review protection for your vessel, equipment, and liability.',
+    considerations: [
+      'Hull and equipment',
+      'Liability',
+      'Uninsured boaters',
+      'Navigation territory',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'rv-insurance'],
+    title: 'RV Insurance',
+    description: 'Insurance options for recreational vehicles and motorhomes.',
+    intro:
+      'RV insurance can address the vehicle, personal belongings carried inside, and liability while you travel or camp.',
+    considerations: [
+      'Motorhome or trailer type',
+      'Comprehensive and collision',
+      'Personal effects',
+      'Roadside assistance',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'secondary-home-insurance'],
+    title: 'Secondary Home Insurance',
+    description: 'Insurance considerations for vacation and secondary homes.',
+    intro:
+      'A vacation home may have different occupancy, location, and seasonal risks from your primary residence. Review its use and protection with an agent.',
+    considerations: [
+      'Seasonal occupancy',
+      'Property location',
+      'Rental activity',
+      'Weather and vacancy exposures',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'classic-car-insurance'],
+    title: 'Classic Car Insurance',
+    description: 'Insurance options for classic, collectible, and antique vehicles.',
+    intro:
+      'Collector vehicles may need coverage that reflects their agreed or collectible value and the way they are driven and stored.',
+    considerations: [
+      'Vehicle valuation',
+      'Annual mileage',
+      'Secure storage',
+      'Parts and restoration',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'valuable-possessions-insurance'],
+    title: 'Valuable Possessions Insurance',
+    description: 'Coverage reviews for jewelry, art, and other valuable possessions.',
+    intro:
+      'Standard personal property limits may not fully address high-value items. Discuss documentation and scheduling options for belongings that matter most.',
+    considerations: [
+      'Appraisals and receipts',
+      'Itemized limits',
+      'Worldwide coverage',
+      'Current valuations',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'off-road-vehicle-insurance'],
+    title: 'Off-Road Vehicle Insurance',
+    description: 'Insurance options for ATVs, UTVs, and off-road vehicles.',
+    intro:
+      'ATVs and other off-road vehicles can create property and liability exposures at home and on the trail. Review how and where they are used.',
+    considerations: [
+      'Vehicle type and modifications',
+      'Physical damage',
+      'Liability',
+      'Permitted use and territory',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'individual-life-insurance'],
+    title: 'Individual Life Insurance',
+    description: 'Individual life insurance options for families and individuals.',
+    intro:
+      'Individual life insurance can help provide financial support for people who depend on you. Compare policy types, terms, and coverage amounts for your situation.',
+    considerations: [
+      'People and expenses to protect',
+      'Coverage period',
+      'Policy type',
+      'Beneficiary details',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'long-term-disability-insurance'],
+    title: 'Long-Term Disability Insurance',
+    description: 'Long-term disability insurance considerations for income protection.',
+    intro:
+      'Long-term disability coverage can help replace part of your income if a qualifying illness or injury prevents you from working.',
+    considerations: [
+      'Benefit amount',
+      'Waiting and benefit periods',
+      'Definition of disability',
+      'Other income protection',
+    ],
+  }),
+  insurancePage({
+    slug: ['personal-insurance', 'long-term-care-insurance'],
+    title: 'Long-Term Care Insurance',
+    description: 'Long-term care insurance planning and coverage options.',
+    intro:
+      'Long-term care planning can help address the cost of assistance with everyday activities or extended care later in life.',
+    considerations: [
+      'Types of care',
+      'Benefit amount and duration',
+      'Elimination period',
+      'Inflation protection',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'crime-insurance'],
+    title: 'Crime Insurance',
+    description: 'Commercial crime insurance considerations for businesses.',
+    intro:
+      'Crime coverage can help a business address certain financial losses involving theft, fraud, or employee dishonesty, subject to policy terms.',
+    considerations: [
+      'Employee dishonesty',
+      'Funds transfer fraud',
+      'Forgery',
+      'Social engineering exclusions',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'cyber-liability-insurance'],
+    title: 'Cyber Liability Insurance',
+    description: 'Cyber liability insurance options for data and network incidents.',
+    intro:
+      'A cyber incident can disrupt operations and expose customer or employee information. Review first- and third-party cyber protections for your business.',
+    considerations: [
+      'Incident response',
+      'Data restoration',
+      'Business interruption',
+      'Privacy and network liability',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'directors-and-officers-liability-insurance'],
+    title: 'Directors and Officers Liability Insurance',
+    description: 'D&O liability insurance considerations for business leaders.',
+    intro:
+      'Directors and officers coverage can help protect an organization and its leaders against certain claims related to management decisions.',
+    considerations: [
+      'Who is insured',
+      'Defense costs',
+      'Company reimbursement',
+      'Policy exclusions',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'employment-practice-liability-insurance'],
+    title: 'Employment Practices Liability Insurance',
+    description: 'Employment practices liability insurance for workplace claims.',
+    intro:
+      'Employment practices liability insurance can address certain allegations involving workplace practices, subject to policy terms and exclusions.',
+    considerations: [
+      'Current and former employees',
+      'Third-party claims',
+      'Defense costs',
+      'Workplace procedures',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'environmental-insurance'],
+    title: 'Environmental Insurance',
+    description: 'Environmental insurance considerations for pollution exposures.',
+    intro:
+      'Some businesses face pollution or environmental exposures that may not be covered by standard liability policies. Review operations and contractual requirements.',
+    considerations: [
+      'Operations and locations',
+      'Cleanup costs',
+      'Third-party bodily injury',
+      'Contract requirements',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'fiduciary-liability-insurance'],
+    title: 'Fiduciary Liability Insurance',
+    description: 'Fiduciary liability insurance for employee benefit plan sponsors.',
+    intro:
+      'Fiduciary liability insurance can help address claims alleging errors in administering employee benefit plans.',
+    considerations: [
+      'Plans and fiduciaries',
+      'Defense costs',
+      'Plan administration',
+      'Policy exclusions',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'flood-insurance'],
+    title: 'Commercial Flood Insurance',
+    description: 'Commercial flood insurance for business property and operations.',
+    intro:
+      'Commercial property insurance may not cover flood losses. Review flood protection for buildings, contents, and business interruption exposures.',
+    considerations: [
+      'Building and contents',
+      'Location and flood zone',
+      'Business interruption',
+      'Waiting periods and limits',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'inland-marine-insurance'],
+    title: 'Inland Marine Insurance',
+    description: 'Inland marine insurance for equipment and property in transit.',
+    intro:
+      'Inland marine coverage can protect property that moves between locations or is not fully addressed by a standard property policy.',
+    considerations: [
+      'Contractor equipment',
+      'Goods in transit',
+      'Installation projects',
+      'Property at temporary locations',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'key-man-life-insurance'],
+    title: 'Key Person Life Insurance',
+    description: 'Key person life insurance planning for business continuity.',
+    intro:
+      'Life insurance on a key person may help a business manage financial disruption after the loss of someone essential to its operations.',
+    considerations: [
+      'Key roles and dependencies',
+      'Coverage amount',
+      'Policy ownership',
+      'Business continuity planning',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'errors-and-omissions-liability-insurance'],
+    title: 'Errors and Omissions Liability Insurance',
+    description: 'Professional errors and omissions liability insurance options.',
+    intro:
+      'Errors and omissions insurance can help protect professional service providers from certain claims alleging mistakes or failure to deliver services.',
+    considerations: [
+      'Professional services',
+      'Claims-made terms',
+      'Retroactive date',
+      'Defense and settlement limits',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'commercial-property-insurance'],
+    title: 'Commercial Property Insurance',
+    description: 'Commercial property insurance for buildings, equipment, and inventory.',
+    intro:
+      'Commercial property coverage can help businesses protect buildings, equipment, inventory, and other property against covered losses.',
+    considerations: [
+      'Building and business personal property',
+      'Replacement cost',
+      'Business income',
+      'Equipment and inventory values',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'ocean-marine-insurance'],
+    title: 'Ocean Marine Insurance',
+    description: 'Ocean marine insurance considerations for cargo and vessels.',
+    intro:
+      'Businesses moving goods over water or operating vessels may need specialized marine coverage for cargo, equipment, and liability.',
+    considerations: [
+      'Cargo and shipments',
+      'Vessel exposure',
+      'Transit route',
+      'Contract and trade terms',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'systems-breakdown-insurance'],
+    title: 'Systems Breakdown Insurance',
+    description: 'Equipment breakdown insurance for commercial systems.',
+    intro:
+      'Equipment breakdown coverage can help address certain sudden mechanical or electrical failures affecting essential business systems.',
+    considerations: [
+      'HVAC and electrical systems',
+      'Production equipment',
+      'Spoilage exposures',
+      'Business interruption',
+    ],
+  }),
+  insurancePage({
+    slug: ['business-insurance', 'commercial-umbrella-insurance'],
+    title: 'Commercial Umbrella Insurance',
+    description: 'Commercial umbrella liability coverage for businesses.',
+    intro:
+      'A commercial umbrella policy may provide additional liability limits above eligible underlying business policies.',
+    considerations: [
+      'Underlying policies and limits',
+      'Business operations',
+      'Contract requirements',
+      'Exclusions and retained limits',
+    ],
+  }),
+];
+
+const additionalServicePages: StaticPage[] = [
+  {
+    slug: ['service-center', 'report-a-claim'],
+    title: 'Report a Claim',
+    description: 'Guidance for reporting an insurance claim to your carrier.',
+    eyebrow: 'Policy service',
+    intro:
+      'If you need to report a loss, contact your insurance carrier as soon as practical. Carrier claims teams can provide immediate instructions and explain the next steps.',
+    sections: [
+      {
+        heading: 'Before you call',
+        bullets: [
+          'Move to safety and contact emergency services if needed.',
+          'Have your policy or carrier information available.',
+          'Take reasonable steps to prevent further damage.',
+          'Keep receipts and notes related to the loss.',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'request-policy-change'],
+    title: 'Request a Policy Change',
+    description: 'Contact our team to discuss changes to your insurance policy.',
+    eyebrow: 'Policy service',
+    intro:
+      'Life, vehicles, property, and business operations change over time. Contact our team to review a requested policy update before assuming a change is covered.',
+    sections: [
+      {
+        heading: 'Common requests',
+        bullets: [
+          'Add or remove a vehicle',
+          'Update a mailing address',
+          'Review a home renovation',
+          'Discuss a change to business operations',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'request-certificate'],
+    title: 'Request a Certificate of Insurance',
+    description: 'Request a certificate of insurance for a business policy.',
+    eyebrow: 'Policy service',
+    intro:
+      'If a client, project, or property manager needs proof of insurance, contact our team with the certificate holder and policy details.',
+    sections: [
+      {
+        heading: 'Information to have ready',
+        bullets: [
+          'Certificate holder name and address',
+          'Project or contract reference',
+          'Required limits or wording',
+          'Requested delivery date',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'request-auto-id-card'],
+    title: 'Request an Auto ID Card',
+    description: 'Get help locating or requesting an auto insurance ID card.',
+    eyebrow: 'Policy service',
+    intro:
+      'Many carriers let policyholders download an auto ID card through their online account or mobile app. Contact us if you need help finding yours.',
+    sections: [
+      {
+        heading: 'Quick ways to get your card',
+        bullets: [
+          'Check your insurer’s mobile app',
+          'Sign in to the carrier website',
+          'Call your carrier’s service team',
+          'Contact our office for help',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'pay-insurance-bill'],
+    title: 'Pay an Insurance Bill',
+    description: 'Find help paying an insurance premium through your carrier.',
+    eyebrow: 'Policy service',
+    intro:
+      'For the fastest payment processing, use your insurance carrier’s official website or billing phone number shown on your statement.',
+    sections: [
+      {
+        heading: 'Payment reminders',
+        bullets: [
+          'Confirm the policy number and amount due',
+          'Check the carrier’s payment options',
+          'Review automatic payment settings',
+          'Contact the carrier about a billing notice',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'complete-annual-renewal'],
+    title: 'Complete an Annual Renewal Review',
+    description: 'Review changing coverage needs before an annual policy renewal.',
+    eyebrow: 'Policy service',
+    intro:
+      'A renewal is a useful time to check whether your policies still match your property, vehicles, household, or business.',
+    sections: [
+      {
+        heading: 'What to review',
+        bullets: [
+          'New purchases or renovations',
+          'Household or driver changes',
+          'Business growth and equipment',
+          'Limits, deductibles, and updated values',
+        ],
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'review-us'],
+    title: 'Review Linwood Forest',
+    description: 'Share feedback about your experience with Linwood Forest Insurance Group.',
+    eyebrow: 'Client feedback',
+    intro:
+      'We appreciate hearing from clients. Contact our team with feedback about your experience or let us know where we can improve.',
+    sections: [
+      {
+        heading: 'Your feedback matters',
+        body: 'We value thoughtful feedback and use it to keep improving the service we provide to families, businesses, and referral partners.',
+      },
+    ],
+    cta: contactCta,
+  },
+  {
+    slug: ['service-center', 'refer-a-friend-copy'],
+    title: 'Refer a Friend',
+    description: 'Introduce a friend or family member to Linwood Forest Insurance Group.',
+    eyebrow: 'Client referrals',
+    intro:
+      'If someone you know is reviewing their insurance, you can share our contact details and encourage them to speak with our team.',
+    sections: [
+      {
+        heading: 'How referrals work',
+        body: 'Ask your friend to mention your referral when they call. We will listen to their needs and help them explore available options.',
+      },
+    ],
+    cta: contactCta,
+  },
+];
+
 export const enStaticPages: StaticPage[] = [
   {
     slug: ['about'],
@@ -106,22 +617,22 @@ export const enStaticPages: StaticPage[] = [
         cards: [
           {
             title: 'Dave Lin',
-            body: 'Principal agent focused on clear advice, carrier access, and long-term client relationships.',
+            body: 'A multi-lingual insurance professional with experience in real estate and financial services.',
             href: '/our-team/dave-lin',
           },
           {
             title: 'Monique Merino',
-            body: 'Associate agent supporting personal insurance clients and responsive service needs.',
+            body: 'An independent agent with more than 18 years of experience in the financial industry.',
             href: '/our-team/monique-merino',
           },
           {
             title: 'Ryan',
-            body: 'Account executive helping clients and referral partners coordinate practical coverage solutions.',
+            body: 'An account executive helping clients and referral partners coordinate coverage.',
             href: '/our-team/ryan',
           },
           {
             title: 'Madeline Pizarro',
-            body: 'Insurance agent helping clients review policies and find competitive options.',
+            body: 'An insurance agent helping clients review policies and compare options.',
             href: '/our-team/madeline-pizarro',
           },
         ],
@@ -135,11 +646,11 @@ export const enStaticPages: StaticPage[] = [
     description: 'Dave Lin, principal agent at Linwood Forest Insurance Group.',
     eyebrow: 'Principal agent',
     intro:
-      'Dave Lin leads Linwood Forest Insurance Group with a focus on client advocacy, practical coverage reviews, and responsive service.',
+      'Dave Lin is a multi-lingual insurance professional with prior experience in real estate and financial services. His specialties include life, property, and casualty insurance. In addition to English, Dave speaks three Chinese dialects. His mission is to help clients secure their possessions and their loved ones’ future through attentive service. Dave grew up in northeastern Pennsylvania, graduated from Crestwood High School and King’s College, and served in the United States Navy aboard the USS Blue Ridge.',
     sections: [
       {
         heading: 'Bio',
-        body: 'Dave helps individuals, families, and business owners understand their insurance options and make informed decisions.',
+        body: '“I ask questions, listen, and help find competitive solutions to meet the needs of my clients.” Dave brings the same dedication and attention to detail to his agency and clients that he learned through his service in the Navy.',
       },
     ],
     cta: contactCta,
@@ -150,8 +661,13 @@ export const enStaticPages: StaticPage[] = [
     description: 'Monique Merino, associate agent at Linwood Forest Insurance Group.',
     eyebrow: 'Associate agent',
     intro:
-      'Monique supports clients with personal insurance questions, policy updates, and service needs.',
-    sections: [{ heading: 'Bio', body: 'Placeholder bio to be replaced with approved team copy.' }],
+      'Monique was raised in Brooklyn, studied in Miami, and began a career in New York’s financial industry at age 18. She holds a bachelor’s degree in Business Finance and has more than 18 years of investment-sector experience.',
+    sections: [
+      {
+        heading: 'Experience',
+        body: 'Before joining Linwood Forest, Monique helped clients with life insurance and Medicare supplement plans, and worked as a registered client associate at Wells Fargo Advisors. She and her family chose to make the Lehigh Valley their home.',
+      },
+    ],
     cta: contactCta,
   },
   {
@@ -160,8 +676,13 @@ export const enStaticPages: StaticPage[] = [
     description: 'Ryan, account executive at Linwood Forest Insurance Group.',
     eyebrow: 'Account executive',
     intro:
-      'Ryan helps clients and referral partners navigate quotes, timelines, and coverage questions.',
-    sections: [{ heading: 'Bio', body: 'Placeholder bio to be replaced with approved team copy.' }],
+      'Ryan is an account executive at Linwood Forest Insurance Group. He works with clients and referral partners to coordinate insurance quotes, manage time-sensitive details, and answer coverage questions.',
+    sections: [
+      {
+        heading: 'How Ryan helps',
+        body: 'Ryan supports clients and referral partners with quote coordination and follow-through as coverage needs and timelines change.',
+      },
+    ],
     cta: contactCta,
   },
   {
@@ -170,8 +691,13 @@ export const enStaticPages: StaticPage[] = [
     description: 'Madeline Pizarro, insurance agent at Linwood Forest Insurance Group.',
     eyebrow: 'Insurance agent',
     intro:
-      'Madeline helps clients review policies, compare options, and keep coverage aligned with their needs.',
-    sections: [{ heading: 'Bio', body: 'Placeholder bio to be replaced with approved team copy.' }],
+      'Madeline helps clients review their insurance policies, compare available options, and keep their coverage aligned with changing needs.',
+    sections: [
+      {
+        heading: 'Client support',
+        body: 'Madeline works with clients to understand their questions and identify coverage options to discuss.',
+      },
+    ],
     cta: contactCta,
   },
   {
@@ -303,6 +829,61 @@ export const enStaticPages: StaticPage[] = [
             title: 'Pet Insurance',
             body: 'Coverage options for veterinary costs.',
             href: '/personal-insurance/pet-insurance',
+          },
+          {
+            title: 'Renters Insurance',
+            body: 'Protection for personal belongings and liability while renting.',
+            href: '/personal-insurance/renters-insurance',
+          },
+          {
+            title: 'Landlord Insurance',
+            body: 'Coverage considerations for owners of residential rental properties.',
+            href: '/personal-insurance/landlord-insurance',
+          },
+          {
+            title: 'Watercraft Insurance',
+            body: 'Coverage to discuss for boats, equipment, and water-related liability.',
+            href: '/personal-insurance/watercraft-insurance',
+          },
+          {
+            title: 'RV Insurance',
+            body: 'Protection options for motorhomes and recreational vehicles.',
+            href: '/personal-insurance/rv-insurance',
+          },
+          {
+            title: 'Secondary Home Insurance',
+            body: 'Coverage considerations for seasonal and vacation properties.',
+            href: '/personal-insurance/secondary-home-insurance',
+          },
+          {
+            title: 'Classic Car Insurance',
+            body: 'Options for collectible vehicles, storage, and limited use.',
+            href: '/personal-insurance/classic-car-insurance',
+          },
+          {
+            title: 'Valuable Possessions Insurance',
+            body: 'Review limits and scheduling for high-value belongings.',
+            href: '/personal-insurance/valuable-possessions-insurance',
+          },
+          {
+            title: 'Off-Road Vehicle Insurance',
+            body: 'Coverage discussions for ATVs, UTVs, and off-road vehicles.',
+            href: '/personal-insurance/off-road-vehicle-insurance',
+          },
+          {
+            title: 'Individual Life Insurance',
+            body: 'Life coverage options tailored to individual and family needs.',
+            href: '/personal-insurance/individual-life-insurance',
+          },
+          {
+            title: 'Long-Term Disability Insurance',
+            body: 'Income protection options if illness or injury interrupts work.',
+            href: '/personal-insurance/long-term-disability-insurance',
+          },
+          {
+            title: 'Long-Term Care Insurance',
+            body: 'Planning for assistance and extended care needs.',
+            href: '/personal-insurance/long-term-care-insurance',
           },
         ],
       },
@@ -473,6 +1054,76 @@ export const enStaticPages: StaticPage[] = [
             body: 'Coverage for employee workplace injuries.',
             href: '/business-insurance/workers-compensation-insurance',
           },
+          {
+            title: 'Crime Insurance',
+            body: 'Coverage to discuss for employee theft, fraud, and other crime losses.',
+            href: '/business-insurance/crime-insurance',
+          },
+          {
+            title: 'Cyber Liability Insurance',
+            body: 'Options for cyber incidents, privacy events, and network interruptions.',
+            href: '/business-insurance/cyber-liability-insurance',
+          },
+          {
+            title: 'Directors and Officers Liability',
+            body: 'Protection to consider for company leaders and management decisions.',
+            href: '/business-insurance/directors-and-officers-liability-insurance',
+          },
+          {
+            title: 'Employment Practices Liability',
+            body: 'Coverage for certain workplace practice claims.',
+            href: '/business-insurance/employment-practice-liability-insurance',
+          },
+          {
+            title: 'Environmental Insurance',
+            body: 'Review pollution and environmental exposures tied to operations.',
+            href: '/business-insurance/environmental-insurance',
+          },
+          {
+            title: 'Fiduciary Liability',
+            body: 'Coverage to discuss for employee benefit plan administration.',
+            href: '/business-insurance/fiduciary-liability-insurance',
+          },
+          {
+            title: 'Commercial Flood Insurance',
+            body: 'Flood protection considerations for commercial property.',
+            href: '/business-insurance/flood-insurance',
+          },
+          {
+            title: 'Inland Marine Insurance',
+            body: 'Coverage for equipment, goods in transit, and property off-site.',
+            href: '/business-insurance/inland-marine-insurance',
+          },
+          {
+            title: 'Key Person Life Insurance',
+            body: 'Life insurance planning to support business continuity.',
+            href: '/business-insurance/key-man-life-insurance',
+          },
+          {
+            title: 'Errors and Omissions Liability',
+            body: 'Professional liability coverage for certain service-related claims.',
+            href: '/business-insurance/errors-and-omissions-liability-insurance',
+          },
+          {
+            title: 'Commercial Property Insurance',
+            body: 'Protection options for business buildings, equipment, and inventory.',
+            href: '/business-insurance/commercial-property-insurance',
+          },
+          {
+            title: 'Ocean Marine Insurance',
+            body: 'Coverage to discuss for cargo, vessels, and waterborne transit.',
+            href: '/business-insurance/ocean-marine-insurance',
+          },
+          {
+            title: 'Systems Breakdown Insurance',
+            body: 'Protection to consider for mechanical and electrical equipment failure.',
+            href: '/business-insurance/systems-breakdown-insurance',
+          },
+          {
+            title: 'Commercial Umbrella Insurance',
+            body: 'Additional liability limits above eligible underlying policies.',
+            href: '/business-insurance/commercial-umbrella-insurance',
+          },
         ],
       },
     ],
@@ -579,6 +1230,46 @@ export const enStaticPages: StaticPage[] = [
           { title: 'Safeco', body: 'Claims: 800-332-3226. Billing: 888-723-3260' },
           { title: 'Travelers', body: 'Claims: 800-252-4633. Billing: 800-842-5075' },
           { title: 'Nationwide', body: 'Claims and billing: 1-800-940-7757' },
+          {
+            title: 'Report a Claim',
+            body: 'Find guidance for contacting your insurer after a loss.',
+            href: '/service-center/report-a-claim',
+          },
+          {
+            title: 'Request a Policy Change',
+            body: 'Ask our team to review a change to your coverage.',
+            href: '/service-center/request-policy-change',
+          },
+          {
+            title: 'Request a Certificate',
+            body: 'Get help with a certificate of insurance request.',
+            href: '/service-center/request-certificate',
+          },
+          {
+            title: 'Request an Auto ID Card',
+            body: 'Find ways to access or request your insurance ID card.',
+            href: '/service-center/request-auto-id-card',
+          },
+          {
+            title: 'Pay an Insurance Bill',
+            body: 'Connect with your carrier to make a premium payment.',
+            href: '/service-center/pay-insurance-bill',
+          },
+          {
+            title: 'Annual Renewal Review',
+            body: 'Review changing coverage needs at renewal.',
+            href: '/service-center/complete-annual-renewal',
+          },
+          {
+            title: 'Review Us',
+            body: 'Share feedback about your experience.',
+            href: '/service-center/review-us',
+          },
+          {
+            title: 'Refer a Friend',
+            body: 'Introduce someone to Linwood Forest.',
+            href: '/service-center/refer-a-friend-copy',
+          },
         ],
       },
     ],
@@ -683,4 +1374,26 @@ export const enStaticPages: StaticPage[] = [
       },
     ],
   },
+  {
+    slug: ['heroes-referral-program'],
+    title: 'Heroes Referral Program',
+    description: 'Refer a friend or family member to Linwood Forest Insurance Group.',
+    eyebrow: 'Share the help',
+    intro:
+      'Want to be a hero to your family and friends? Let them know about Linwood Forest. We can help them compare coverage and explore potential savings.',
+    sections: [
+      {
+        heading: 'A thank-you for your referral',
+        body: 'Ask your friend to mention your referral when they call. Linwood Forest offers a $10 gift card as a thank-you for eligible referrals. Contact our team for program details.',
+      },
+      {
+        heading: 'Make an introduction',
+        body: 'Share our phone number or email with your friend so they can talk with an insurance professional directly.',
+        bullets: ['Call (610) 572-7322', 'Email sales@linwoodforest.com'],
+      },
+    ],
+    cta: contactCta,
+  },
+  ...additionalInsurancePages,
+  ...additionalServicePages,
 ];

@@ -59,7 +59,17 @@ const businessItems: HeaderNavItem[] = [
 ];
 
 const navItems: HeaderNavItem[] = [
-  { label: 'About', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+    submenuTitle: 'About Linwood Forest',
+    children: [
+      { label: 'Our Team', href: '/our-team' },
+      { label: 'Agency Story', href: '/about/agency-story' },
+      { label: 'Carrier Team', href: '/about/carrier-team' },
+      { label: 'Local Vendors', href: '/about/local-vendors' },
+    ],
+  },
   {
     label: 'Personal Insurance',
     href: '/personal-insurance',
