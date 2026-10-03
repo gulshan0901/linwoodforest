@@ -199,24 +199,28 @@ export const homeContent: HomeContent = {
   blog: {
     eyebrow: 'Blog preview',
     title: 'Helpful insurance notes for local clients.',
+    featuredLabel: 'Featured guide',
+    guideLabel: 'Practical guide',
+    readLabel: 'Read article',
+    allArticlesLabel: 'Explore all articles',
     posts: [
       {
-        title: 'What to review before renewal season',
-        excerpt: 'Placeholder article summary for homeowners and drivers.',
-        href: '/blog/renewal-review',
-        date: '2026-09-15',
+        title: '5 Security Tips for Your New Home',
+        excerpt:
+          'Simple ways to protect a new home, from changing access codes to documenting the things you own.',
+        href: '/blog/5-security-tips-for-your-new-home',
       },
       {
-        title: 'Coverage basics for growing small businesses',
-        excerpt: 'Placeholder article summary for business owners.',
-        href: '/blog/business-coverage-basics',
-        date: '2026-08-28',
+        title: 'A Little Savings Secret',
+        excerpt:
+          'See how a regular coverage review can help you weigh savings without giving up protection you need.',
+        href: '/blog/a-little-savings-secret',
       },
       {
-        title: 'Questions to ask when buying a home',
-        excerpt: 'Placeholder article summary for buyers, realtors, and lenders.',
-        href: '/blog/home-buying-insurance',
-        date: '2026-08-05',
+        title: 'How to Safely Store Your Stuff',
+        excerpt:
+          'Practical storage and photo-inventory habits that can make it easier to protect your belongings.',
+        href: '/blog/how-to-safely-store-your-stuff',
       },
     ],
   },

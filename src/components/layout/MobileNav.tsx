@@ -9,9 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import type { NavItem } from '@/types/site';
 
 import './MobileNav.css';
@@ -28,6 +28,11 @@ type MobileNavItem = Omit<NavItem, 'children'> & {
 
 export function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>

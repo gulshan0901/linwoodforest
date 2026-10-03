@@ -34,6 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     }));
 
-    return [home, ...pages];
+    const contactPages = ['/contact', '/get-quote'].map((path) => ({
+      url: `${siteConfig.siteUrl}/${locale}${path}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${siteConfig.siteUrl}/en${path}`,
+          'zh-Hans': `${siteConfig.siteUrl}/zh${path}`,
+        },
+      },
+    }));
+
+    return [home, ...pages, ...contactPages];
   });
 }

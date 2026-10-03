@@ -585,28 +585,6 @@ export const enStaticPages: StaticPage[] = [
     cta: contactCta,
   },
   {
-    slug: ['contact'],
-    title: 'Contact',
-    description: 'Contact Linwood Forest Insurance Group in Whitehall, PA.',
-    eyebrow: 'We are here for you',
-    intro: 'Visit our Whitehall office, call the team, or send a service request.',
-    sections: [
-      {
-        heading: 'Our office',
-        bullets: [
-          '3312 7th St. Unit 101, Whitehall, PA 18052',
-          '(610) 572-7322',
-          '(610) 572-7344',
-          'sales@linwoodforest.com',
-        ],
-      },
-      {
-        heading: 'Service request',
-        body: 'The contact form backend is prepared for Gravity Forms integration. Until the final WordPress field IDs are confirmed, use phone or email for production inquiries.',
-      },
-    ],
-  },
-  {
     slug: ['client-testimonials'],
     title: 'Client Testimonials',
     description: 'Client testimonials for Linwood Forest Insurance Group.',
@@ -665,31 +643,6 @@ export const enStaticPages: StaticPage[] = [
       },
     ],
     cta: contactCta,
-  },
-  {
-    slug: ['get-quote'],
-    title: 'Get Quote',
-    description: 'Start an insurance quote with Linwood Forest Insurance Group.',
-    eyebrow: 'Start a quote',
-    intro:
-      'Tell us what you need, and our team will help compare coverage options. For supported products, you can also start through the self-quoting portal.',
-    sections: [
-      {
-        heading: 'What to expect',
-        bullets: [
-          'Share basic contact and coverage information',
-          'We review carrier options',
-          'You receive a proposal tailored to your situation',
-        ],
-      },
-    ],
-    cta: {
-      title: 'Start online',
-      body: 'Use the self quoting portal to begin.',
-      label: 'Open self quoting portal',
-      href: 'https://www.ezlynx.com/consumer-quoter-placeholder',
-      external: true,
-    },
   },
   {
     slug: ['privacy-policy'],

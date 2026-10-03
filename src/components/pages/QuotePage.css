@@ -1,0 +1,262 @@
+@layer linwood.components {
+  .linwood-quote-page {
+    color: var(--linwood-color-slate-900);
+  }
+
+  .linwood-quote-page__hero {
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 8% 100%, rgb(24 90 179 / 0.08), transparent 24rem),
+      radial-gradient(ellipse at 90% 0, rgb(47 150 54 / 0.1), transparent 24rem),
+      linear-gradient(135deg, #f5f8f7, #fff 55%, #f3f8f3);
+  }
+
+  .linwood-quote-page__hero-inner {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .linwood-quote-page__intro {
+    max-width: 43rem;
+  }
+
+  .linwood-quote-page__eyebrow {
+    margin: 0 0 var(--linwood-space-4);
+    color: #287a43;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .linwood-quote-page__intro h1 {
+    max-width: 12ch;
+    color: #123b3a;
+    font-size: clamp(2.6rem, 5.8vw, 5rem);
+    line-height: 1.02;
+  }
+
+  .linwood-quote-page__intro > p:not(.linwood-quote-page__eyebrow) {
+    max-width: 37rem;
+    margin-top: var(--linwood-space-5);
+    color: var(--linwood-color-slate-700);
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    line-height: 1.8;
+  }
+
+  .linwood-quote-page__trust {
+    display: flex;
+    align-items: center;
+    gap: var(--linwood-space-3);
+    margin-top: var(--linwood-space-7);
+    color: #123b3a;
+    font-size: 0.9rem;
+    font-weight: 850;
+  }
+
+  .linwood-quote-page__trust-mark {
+    display: grid;
+    width: 2.6rem;
+    height: 2.6rem;
+    place-items: center;
+    border-radius: 0.8rem;
+    background: #e8f2eb;
+    color: #287a43;
+  }
+
+  .linwood-quote-page__contact-options {
+    display: grid;
+    gap: var(--linwood-space-3);
+  }
+
+  .linwood-quote-page__option {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: var(--linwood-space-4);
+    border: 1px solid rgb(18 59 58 / 0.09);
+    border-radius: 1.1rem;
+    background: #fff;
+    color: inherit;
+    padding: clamp(1.25rem, 2.5vw, 1.8rem);
+    text-decoration: none;
+    box-shadow: 0 18px 48px rgb(11 41 40 / 0.07);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  .linwood-quote-page__option:hover {
+    border-color: rgb(24 90 179 / 0.25);
+    box-shadow: 0 24px 56px rgb(11 41 40 / 0.12);
+    transform: translateY(-3px);
+  }
+
+  .linwood-quote-page__option-icon {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border-radius: 0.9rem;
+    background: #edf5f0;
+    color: #247c44;
+  }
+
+  .linwood-quote-page__option-icon svg {
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+
+  .linwood-quote-page__option-copy {
+    display: grid;
+    gap: var(--linwood-space-2);
+  }
+
+  .linwood-quote-page__option-copy > strong {
+    color: #123b3a;
+    font-size: 1.15rem;
+  }
+
+  .linwood-quote-page__option-copy > span {
+    color: var(--linwood-color-slate-700);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .linwood-quote-page__option-copy > b {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--linwood-space-2);
+    margin-top: var(--linwood-space-2);
+    color: #185ab3;
+    font-size: 0.9rem;
+  }
+
+  .linwood-quote-page__option-copy > b svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 170ms ease;
+  }
+
+  .linwood-quote-page__option:hover .linwood-quote-page__option-copy > b svg {
+    transform: translateX(0.2rem);
+  }
+
+  .linwood-quote-page__coverage {
+    padding-block: clamp(4rem, 7vw, 6rem);
+  }
+
+  .linwood-quote-page__section-heading {
+    max-width: 43rem;
+    margin-bottom: var(--linwood-space-6);
+  }
+
+  .linwood-quote-page__section-heading h2 {
+    color: #123b3a;
+  }
+
+  .linwood-quote-page__coverage-grid {
+    display: grid;
+    gap: var(--linwood-space-3);
+  }
+
+  .linwood-quote-page__coverage-item {
+    display: flex;
+    min-height: 5rem;
+    align-items: center;
+    gap: var(--linwood-space-3);
+    border: 1px solid rgb(18 59 58 / 0.08);
+    border-radius: 0.95rem;
+    background: #fff;
+    color: #123b3a;
+    font-weight: 800;
+    padding: 1rem 1.2rem;
+  }
+
+  .linwood-quote-page__coverage-item svg {
+    width: 1.55rem;
+    height: 1.55rem;
+    flex: 0 0 auto;
+    color: #287a43;
+  }
+
+  .linwood-quote-page__next {
+    background:
+      radial-gradient(ellipse at 100% 0, rgb(47 150 54 / 0.1), transparent 25rem), #f3f7f5;
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .linwood-quote-page__next-inner {
+    display: grid;
+    align-items: center;
+    gap: var(--linwood-space-8);
+  }
+
+  .linwood-quote-page__next-inner > div:first-child {
+    max-width: 48rem;
+  }
+
+  .linwood-quote-page__next h2 {
+    color: #123b3a;
+  }
+
+  .linwood-quote-page__next-inner > div:first-child > p:not(.linwood-quote-page__privacy) {
+    color: var(--linwood-color-slate-700);
+    line-height: 1.75;
+  }
+
+  .linwood-quote-page__privacy {
+    border-left: 3px solid #4b9b54;
+    color: var(--linwood-color-slate-700);
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-top: var(--linwood-space-5);
+    padding-left: var(--linwood-space-3);
+  }
+
+  .linwood-quote-page__next-callout {
+    display: grid;
+    gap: var(--linwood-space-2);
+    border: 1px solid rgb(18 59 58 / 0.09);
+    border-radius: 1rem;
+    background: #fff;
+    padding: 1.4rem;
+    box-shadow: 0 14px 36px rgb(11 41 40 / 0.06);
+  }
+
+  .linwood-quote-page__next-callout span {
+    color: var(--linwood-color-slate-700);
+    font-size: 0.86rem;
+  }
+
+  .linwood-quote-page__next-callout a {
+    color: #185ab3;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  @media (min-width: 900px) {
+    .linwood-quote-page__hero-inner {
+      grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.82fr);
+    }
+
+    .linwood-quote-page__coverage-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .linwood-quote-page__next-inner {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.55fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .linwood-quote-page__option,
+    .linwood-quote-page__option-copy > b svg {
+      transition: none;
+    }
+  }
+}

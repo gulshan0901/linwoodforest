@@ -59,10 +59,12 @@ export function getStaticPage(locale: Locale, slug: string[]): StaticPageWithLoc
 }
 
 export function getAllStaticPageParams() {
-  return (Object.keys(pagesByLocale) as Locale[]).flatMap((locale) =>
-    pagesByLocale[locale].map((page) => ({
+  return (Object.keys(pagesByLocale) as Locale[]).flatMap((locale) => [
+    ...pagesByLocale[locale].map((page) => ({
       locale,
       slug: page.slug,
     })),
-  );
+    { locale, slug: ['contact'] },
+    { locale, slug: ['get-quote'] },
+  ]);
 }

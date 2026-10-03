@@ -42,7 +42,6 @@ export type BlogPreview = {
   title: string;
   excerpt: string;
   href: string;
-  date: string;
 };
 
 export type HomeContent = {
@@ -94,6 +93,10 @@ export type HomeContent = {
   blog: {
     eyebrow: string;
     title: string;
+    featuredLabel: string;
+    guideLabel: string;
+    readLabel: string;
+    allArticlesLabel: string;
     posts: BlogPreview[];
   };
   partners: {

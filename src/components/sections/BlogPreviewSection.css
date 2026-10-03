@@ -1,173 +1,269 @@
 @layer linwood.components {
   .linwood-blog {
+    overflow: hidden;
     background:
-      linear-gradient(180deg, var(--linwood-color-white) 0%, #f7faf9 100%),
-      var(--linwood-color-white);
+      radial-gradient(ellipse at 8% 16%, rgb(47 150 54 / 0.055), transparent 24rem),
+      linear-gradient(180deg, #f8faf8, var(--linwood-color-white));
   }
 
   .linwood-blog__heading {
-    display: grid;
-    justify-items: center;
-    max-width: 46rem;
-    margin: 0 auto var(--linwood-space-10);
-    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--linwood-space-6);
+    margin-bottom: var(--linwood-space-8);
   }
 
   .linwood-blog__heading h2 {
+    max-width: 40rem;
     margin-top: var(--linwood-space-3);
-    background: linear-gradient(90deg, #1976b7, #2f9636);
-    background-clip: text;
-    color: transparent;
+    color: var(--linwood-color-forest-950);
+  }
+
+  .linwood-blog__all-link,
+  .linwood-blog__read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--linwood-space-2);
+    color: #185ab3;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .linwood-blog__all-link {
+    flex: 0 0 auto;
+    padding-bottom: 0.35rem;
+  }
+
+  .linwood-blog__all-link svg,
+  .linwood-blog__read-link svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    transition: transform 180ms ease;
+  }
+
+  .linwood-blog__all-link:hover svg,
+  .linwood-blog__read-link:hover svg {
+    transform: translateX(0.2rem);
   }
 
   .linwood-blog__grid {
     display: grid;
-    gap: var(--linwood-space-6);
+    gap: var(--linwood-space-5);
   }
 
-  .linwood-blog__grid .linwood-card {
-    position: relative;
+  .linwood-blog__grid .linwood-blog__card {
+    display: grid;
     overflow: hidden;
-    border: 1px solid rgb(11 41 40 / 0.08);
-    border-radius: var(--linwood-radius-lg);
-    box-shadow: 0 24px 62px rgb(11 41 40 / 0.09);
+    border: 1px solid rgb(18 59 58 / 0.09);
+    border-radius: 1.25rem;
+    background: var(--linwood-color-white);
+    box-shadow: 0 18px 52px rgb(11 41 40 / 0.07);
     transition:
-      border-color 190ms ease,
-      box-shadow 190ms ease,
-      transform 190ms ease;
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
   }
 
-  .linwood-blog__grid .linwood-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+  .linwood-blog__grid .linwood-blog__card:hover {
+    border-color: rgb(24 90 179 / 0.2);
+    box-shadow: 0 26px 62px rgb(11 41 40 / 0.12);
+    transform: translateY(-4px);
+  }
+
+  .linwood-blog__art {
+    position: relative;
+    display: grid;
+    min-height: 12rem;
+    overflow: hidden;
+    place-items: center;
     background:
-      radial-gradient(circle at 18% 0, rgb(200 155 60 / 0.18), transparent 10rem),
-      linear-gradient(150deg, rgb(25 118 210 / 0.08), transparent 48%);
-    opacity: 0.68;
-    transition: opacity 190ms ease;
+      radial-gradient(circle at 74% 20%, rgb(255 255 255 / 0.34), transparent 9rem),
+      linear-gradient(135deg, #174f65, #218657);
+    isolation: isolate;
   }
 
-  .linwood-blog__grid .linwood-card::after {
-    content: '';
+  .linwood-blog__card--2 .linwood-blog__art {
+    background:
+      radial-gradient(circle at 74% 20%, rgb(255 255 255 / 0.38), transparent 9rem),
+      linear-gradient(135deg, #bd772a, #dcaa42);
+  }
+
+  .linwood-blog__card--3 .linwood-blog__art {
+    background:
+      radial-gradient(circle at 74% 20%, rgb(255 255 255 / 0.32), transparent 9rem),
+      linear-gradient(135deg, #38519a, #718ad0);
+  }
+
+  .linwood-blog__art::before,
+  .linwood-blog__art::after {
     position: absolute;
-    inset: auto 0 0;
-    height: 0.3rem;
-    background: linear-gradient(90deg, #1976d2, #2f9636, var(--linwood-color-amber-600));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 190ms ease;
+    z-index: -1;
+    border: 1px solid rgb(255 255 255 / 0.25);
+    border-radius: 50%;
+    content: '';
   }
 
-  .linwood-blog__grid .linwood-card:hover {
-    border-color: rgb(25 118 210 / 0.18);
-    box-shadow: 0 34px 78px rgb(11 41 40 / 0.14);
-    transform: translateY(-5px);
+  .linwood-blog__art::before {
+    width: 17rem;
+    height: 17rem;
+    transform: translate(3rem, 2rem);
   }
 
-  .linwood-blog__grid .linwood-card:hover::before {
-    opacity: 1;
+  .linwood-blog__art::after {
+    width: 12rem;
+    height: 12rem;
+    transform: translate(3rem, 2rem);
   }
 
-  .linwood-blog__grid .linwood-card:hover::after {
-    transform: scaleX(1);
+  .linwood-blog__art-orbit {
+    position: absolute;
+    width: 7.25rem;
+    height: 7.25rem;
+    border: 1px solid rgb(255 255 255 / 0.3);
+    border-radius: 50%;
+    transform: translate(3rem, 2rem);
+  }
+
+  .linwood-blog__art-icon {
+    display: grid;
+    width: 5.25rem;
+    height: 5.25rem;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 0.42);
+    border-radius: 1.5rem;
+    background: rgb(255 255 255 / 0.16);
+    color: #fff;
+    box-shadow: 0 16px 34px rgb(0 0 0 / 0.12);
+    backdrop-filter: blur(8px);
+    transform: rotate(-8deg);
+  }
+
+  .linwood-blog__art-icon svg {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .linwood-blog__art-caption {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1rem;
+    color: rgb(255 255 255 / 0.86);
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .linwood-blog__content {
-    position: relative;
-    z-index: 1;
     display: grid;
-    min-height: 100%;
-    gap: var(--linwood-space-4);
-    padding: clamp(1.5rem, 3vw, 2.4rem);
-  }
-
-  .linwood-blog__meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--linwood-space-2);
-  }
-
-  .linwood-blog__tag,
-  .linwood-blog__date {
-    display: inline-flex;
-    width: max-content;
-    border-radius: 999px;
-    font-size: var(--linwood-text-sm);
-    font-weight: 900;
-    padding: var(--linwood-space-1) var(--linwood-space-3);
+    align-content: start;
+    gap: var(--linwood-space-3);
+    padding: clamp(1.35rem, 2.4vw, 2rem);
   }
 
   .linwood-blog__tag {
-    background: rgb(25 118 210 / 0.1);
-    color: #1769c2;
-  }
-
-  .linwood-blog__date {
-    background: rgb(200 155 60 / 0.12);
-    color: var(--linwood-color-amber-600);
+    width: max-content;
+    border-radius: 999px;
+    background: rgb(24 90 179 / 0.08);
+    color: #185ab3;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.7rem;
+    text-transform: uppercase;
   }
 
   .linwood-blog__content h3 {
-    margin: var(--linwood-space-2) 0 0;
+    margin: 0;
     color: var(--linwood-color-slate-900);
-    font-weight: 900;
-    line-height: 1.18;
+    font-weight: 850;
+    line-height: 1.25;
+  }
+
+  .linwood-blog__content h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .linwood-blog__content h3 a:hover,
+  .linwood-blog__content h3 a:focus-visible {
+    color: #185ab3;
   }
 
   .linwood-blog__excerpt {
+    margin: 0;
     color: var(--linwood-color-slate-700);
-    line-height: var(--linwood-leading-normal);
+    line-height: 1.7;
   }
 
-  .linwood-blog__content .linwood-button {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--linwood-space-2);
+  .linwood-blog__read-link {
     justify-self: start;
-    margin-top: auto;
-    font-weight: 900;
-  }
-
-  .linwood-blog__content .linwood-button svg {
-    width: 1.1rem;
-    height: 1.1rem;
-    transition: transform 180ms ease;
-  }
-
-  .linwood-blog__grid .linwood-card:hover .linwood-button svg {
-    transform: translateX(0.25rem);
+    margin-top: var(--linwood-space-2);
+    font-size: 0.9rem;
   }
 
   @media (min-width: 820px) {
     .linwood-blog__grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
     }
 
     .linwood-blog__card--featured {
-      grid-column: span 2;
+      grid-row: span 2;
+      grid-template-rows: minmax(14rem, 1fr) auto;
     }
 
-    .linwood-blog__card--featured .linwood-blog__content {
-      min-height: 23rem;
-      align-content: center;
+    .linwood-blog__card--featured .linwood-blog__art {
+      min-height: 20rem;
     }
 
-    .linwood-blog__card--featured .linwood-blog__content h3 {
-      max-width: 34rem;
-      font-size: clamp(1.8rem, 3vw, 2.65rem);
+    .linwood-blog__card:not(.linwood-blog__card--featured) {
+      grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.2fr);
     }
 
-    .linwood-blog__card--featured .linwood-blog__excerpt {
-      max-width: 34rem;
-      font-size: var(--linwood-text-lg);
+    .linwood-blog__card:not(.linwood-blog__card--featured) .linwood-blog__art {
+      min-height: 100%;
+    }
+
+    .linwood-blog__card:not(.linwood-blog__card--featured) .linwood-blog__art-caption,
+    .linwood-blog__card:not(.linwood-blog__card--featured) .linwood-blog__art-orbit {
+      display: none;
     }
   }
 
-  @media (max-width: 560px) {
+  @media (min-width: 1100px) {
+    .linwood-blog__grid {
+      grid-template-columns: 1.12fr 0.88fr;
+    }
+
+    .linwood-blog__card--featured {
+      grid-row: span 2;
+      grid-template-rows: minmax(18rem, 1fr) auto;
+    }
+
+    .linwood-blog__card--featured .linwood-blog__content h3 {
+      font-size: 1.65rem;
+    }
+  }
+
+  @media (max-width: 640px) {
     .linwood-blog__heading {
-      margin-bottom: var(--linwood-space-8);
+      align-items: start;
+      flex-direction: column;
+      gap: var(--linwood-space-4);
+    }
+
+    .linwood-blog__art {
+      min-height: 10rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .linwood-blog__grid .linwood-blog__card,
+    .linwood-blog__all-link svg,
+    .linwood-blog__read-link svg {
+      transition: none;
     }
   }
 }

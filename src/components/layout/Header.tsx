@@ -1,6 +1,5 @@
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
@@ -15,6 +14,7 @@ import type { NavItem } from '@/types/site';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
 import './Header.css';
 
@@ -149,47 +149,7 @@ export function Header() {
             <span className="linwood-header__brand-subtitle">Insurance Group</span>
           </span>
         </Link>
-        <nav aria-label="Primary navigation" className="linwood-header__nav">
-          {navItems.map((item) => (
-            <div className="linwood-header__nav-item" key={item.label}>
-              <Link className="linwood-header__nav-link" href={item.href}>
-                {item.label}
-                {item.children ? (
-                  <KeyboardArrowDownIcon aria-hidden="true" fontSize="small" />
-                ) : null}
-              </Link>
-              {item.children ? (
-                <div
-                  className={[
-                    'linwood-header__mega',
-                    item.submenuTone ? `linwood-header__mega--${item.submenuTone}` : undefined,
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
-                  role="group"
-                >
-                  <div className="linwood-header__mega-grid">
-                    <p className="linwood-header__mega-title">{item.submenuTitle}</p>
-                    {item.children.map((child) => (
-                      <Link
-                        className="linwood-header__mega-link"
-                        href={child.href}
-                        key={child.label}
-                      >
-                        {child.icon ? (
-                          <span aria-hidden="true" className="linwood-header__mega-icon">
-                            {child.icon}
-                          </span>
-                        ) : null}
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </nav>
+        <DesktopNav items={navItems} />
         <div className="linwood-header__actions">
           <Button href="/get-quote" variant="contained">
             <RequestQuoteIcon aria-hidden="true" fontSize="small" />
