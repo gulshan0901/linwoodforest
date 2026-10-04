@@ -1,4 +1,5 @@
 const googleMapsCid = process.env.NEXT_PUBLIC_GOOGLE_MAPS_CID || '6910901999074585092';
+const googlePlaceId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || 'ChIJczwN7UU4xlkRBKpgrMB06F8';
 
 export const siteConfig = {
   name: 'Linwood Forest Insurance Group',
@@ -9,7 +10,7 @@ export const siteConfig = {
   email: 'sales@linwoodforest.com',
   emailHref: 'mailto:sales@linwoodforest.com',
   googleMapsCid,
-  googlePlaceId: 'ChIJxZ_nCbaCxIkRRE6bC067G2A',
+  googlePlaceId,
   googleReviewsHref: `https://www.google.com/maps?cid=${googleMapsCid}`,
   address: {
     street: '3312 7th St. Unit 101',

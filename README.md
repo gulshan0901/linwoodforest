@@ -69,8 +69,10 @@ The homepage loads reviews live from the Google Places API (New). The business's
 is stored in the site configuration. Configure this server-side environment variable in the
 deployment platform:
 
-- `GOOGLE_MAPS_API_KEY` - A key with Places API (New) enabled. Restrict it to the Places API and
-  keep it private; do not use a `NEXT_PUBLIC_` variable.
+- `GOOGLE_MAPS_API_KEY` - A key with billing enabled and Places API (New) enabled. Restrict it to
+  the Places API and keep it private; do not use a `NEXT_PUBLIC_` variable.
+- `NEXT_PUBLIC_GOOGLE_PLACE_ID` - Public Google Place ID for the business listing. Defaults to the
+  Linwood Forest Insurance Group listing used by the current WordPress site.
 - `NEXT_PUBLIC_GOOGLE_MAPS_CID` - Public Google Maps listing CID used for the “View all reviews”
   link. Defaults to Linwood Forest Insurance Group's CID. This is not an API key and cannot fetch
   review text.
