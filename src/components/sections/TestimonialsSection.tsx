@@ -158,7 +158,7 @@ export function TestimonialsSection({ content, locale }: TestimonialsSectionProp
           rel="noopener noreferrer"
           target="_blank"
         >
-          {labels.viewAll}{' '}
+          {labels.viewAll}
           <span lang="en" translate="no">
             Google Maps
           </span>

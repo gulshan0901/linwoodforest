@@ -33,6 +33,18 @@ function buildCsp(nonce: string) {
   ]
     .filter(Boolean)
     .join(' ');
+  const frameSources = [
+    "'self'",
+    'https://*.ezlynx.com',
+    'https://*.term4sale.com',
+    'https://www.youtube.com',
+    'https://www.youtube-nocookie.com',
+    isVercelDeployment ? 'https://vercel.live' : undefined,
+    'https://www.google.com/recaptcha/',
+    'https://recaptcha.google.com/recaptcha/',
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return [
     "default-src 'self'",
@@ -41,7 +53,7 @@ function buildCsp(nonce: string) {
     "img-src 'self' data: https://images.unsplash.com https://placehold.co https://www.google-analytics.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/",
     "font-src 'self'",
     `connect-src ${connectSources}`,
-    "frame-src 'self' https://*.ezlynx.com https://*.term4sale.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
+    `frame-src ${frameSources}`,
     "form-action 'self'",
     "base-uri 'self'",
     "frame-ancestors 'none'",
