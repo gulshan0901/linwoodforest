@@ -30,14 +30,6 @@ export type TeamMemberPreview = {
   image: string;
 };
 
-export type Testimonial = {
-  quote: string;
-  author: string;
-  location: string;
-  avatar?: string;
-  date?: string;
-};
-
 export type BlogPreview = {
   title: string;
   excerpt: string;
@@ -86,9 +78,7 @@ export type HomeContent = {
     tone?: 'blue' | 'green' | 'orange' | 'red';
   }>;
   testimonials: {
-    eyebrow: string;
     title: string;
-    items: Testimonial[];
   };
   blog: {
     eyebrow: string;

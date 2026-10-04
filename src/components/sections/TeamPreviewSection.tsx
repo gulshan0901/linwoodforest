@@ -1,5 +1,4 @@
 import Avatar from '@mui/material/Avatar';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -70,16 +69,31 @@ export function TeamPreviewSection({ content }: TeamPreviewSectionProps) {
 
           return (
             <Card className="linwood-team__card" key={member.name}>
-              <CardContent className="linwood-team__content">
-                {detail.badge ? <span className="linwood-team__badge">{detail.badge}</span> : null}
-                <Avatar
-                  alt={`${member.name} headshot`}
-                  className="linwood-team__avatar"
-                  src={detail.image}
-                >
-                  {detail.avatar}
-                </Avatar>
-                <div>
+              <div className="linwood-team__content">
+                <div className="linwood-team__portrait">
+                  <Avatar
+                    alt={`${member.name} headshot`}
+                    className="linwood-team__avatar"
+                    src={detail.image}
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 0,
+                      '& img': {
+                        objectFit: 'cover',
+                        objectPosition: 'center 28%',
+                      },
+                    }}
+                  >
+                    {detail.avatar}
+                  </Avatar>
+                  {detail.badge ? (
+                    <span className="linwood-team__badge">{detail.badge}</span>
+                  ) : null}
+                </div>
+                <div className="linwood-team__details">
                   <Typography component="h3" variant="h5">
                     {member.name}
                   </Typography>
@@ -97,7 +111,7 @@ export function TeamPreviewSection({ content }: TeamPreviewSectionProps) {
                     <ArrowForwardIcon aria-hidden="true" />
                   </Link>
                 </div>
-              </CardContent>
+              </div>
             </Card>
           );
         })}

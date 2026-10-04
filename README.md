@@ -19,7 +19,7 @@ A modern, responsive redesign of the Linwood Forest Insurance Group website buil
 3. **Services Section** - Insurance service cards with features and pricing
 4. **Statistics Section** - Animated counters showing company achievements
 5. **Team Section** - Professional team member cards
-6. **Testimonials** - Interactive testimonial carousel with real client reviews
+6. **Testimonials** - Live Google reviews and ratings in an interactive carousel
 7. **Contact Section** - Contact form with validation, business information, and map
 8. **Footer** - Comprehensive footer with links, social media, and company info
 
@@ -62,6 +62,18 @@ npm run dev
 npm run build
 npm start
 ```
+
+### Google Reviews
+
+The homepage loads reviews live from the Google Places API (New). The business's Google Place ID
+is stored in the site configuration. Configure this server-side environment variable in the
+deployment platform:
+
+- `GOOGLE_MAPS_API_KEY` - A key with Places API (New) enabled. Restrict it to the Places API and
+  keep it private; do not use a `NEXT_PUBLIC_` variable.
+
+The Place ID is available from the [Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id).
+Review content is fetched without caching and includes Google Maps attribution.
 
 ## 📁 Components Created
 

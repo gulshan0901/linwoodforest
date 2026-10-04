@@ -50,7 +50,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <TeamPreviewSection content={content.team} />
       <StatsSection stats={content.stats} />
       <GetInTouchSection />
-      <TestimonialsSection content={content.testimonials} />
+      <TestimonialsSection content={content.testimonials} locale={locale} />
       <BlogPreviewSection content={content.blog} />
       <PartnersSection content={content.partners} />
       <ContactCtaSection content={content.contactCta} />

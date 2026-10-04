@@ -28,35 +28,56 @@
 
   .linwood-team__content {
     position: relative;
-    display: grid;
-    justify-items: center;
-    gap: var(--linwood-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     height: 100%;
-    padding: var(--linwood-space-8) var(--linwood-space-6);
+    padding: 0;
     text-align: center;
   }
 
-  .linwood-team__content > div {
-    display: grid;
-    justify-items: center;
+  .linwood-team__portrait {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1.25 / 1;
+    background: linear-gradient(135deg, #e8f1ec, #e8eef8);
   }
 
-  .linwood-team__avatar {
-    width: 7.25rem;
-    height: 7.25rem;
-    border: 4px solid var(--linwood-color-white);
+  .linwood-team__portrait::after {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(transparent, rgb(11 41 40 / 0.18));
+    content: '';
+    pointer-events: none;
+  }
+
+  .linwood-team__details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    padding: var(--linwood-space-6) var(--linwood-space-5) var(--linwood-space-5);
+  }
+
+  .linwood-team__portrait .linwood-team__avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
     background: var(--linwood-color-sage-200);
     color: var(--linwood-color-slate-900);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
-    box-shadow:
-      0 14px 30px rgb(11 41 40 / 0.14),
-      0 0 0 3px rgb(221 232 227 / 0.8);
-    transition: transform 190ms ease;
+    transition: transform 260ms ease;
   }
 
   .linwood-team__avatar img {
     object-fit: cover;
+    object-position: center 28%;
   }
 
   .linwood-team__role {
@@ -68,8 +89,10 @@
   .linwood-team__card {
     position: relative;
     overflow: hidden;
-    min-height: 29rem;
-    border-radius: var(--linwood-radius-lg);
+    min-height: 35rem;
+    border: 1px solid rgb(18 59 58 / 0.1);
+    border-radius: 1.25rem;
+    background: linear-gradient(155deg, #fff 55%, #f5f9f6);
     transition:
       transform 180ms ease,
       box-shadow 180ms ease;
@@ -123,7 +146,7 @@
   }
 
   .linwood-team__card:hover .linwood-team__avatar {
-    transform: rotate(-3deg) scale(1.04);
+    transform: scale(1.045);
   }
 
   .linwood-team__content {
@@ -132,21 +155,26 @@
   }
 
   .linwood-team__card h3 {
-    margin-top: var(--linwood-space-4);
+    margin-top: 0;
     color: #050b18;
     font-weight: 900;
   }
 
   .linwood-team__badge {
-    position: static;
-    border-radius: 0.45rem;
-    background: #2f9636;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.36);
+    border-radius: 999px;
+    background: rgb(18 59 58 / 0.84);
+    box-shadow: 0 8px 24px rgb(11 41 40 / 0.18);
+    backdrop-filter: blur(8px);
     color: var(--linwood-color-white);
     font-size: var(--linwood-text-xs);
     font-weight: 900;
     letter-spacing: 0.04em;
-    margin-bottom: calc(var(--linwood-space-2) * -1);
-    padding: 0.55rem 1rem;
+    padding: 0.5rem 0.85rem;
     text-transform: uppercase;
   }
 
@@ -189,7 +217,7 @@
     box-shadow: 0 12px 24px rgb(24 90 179 / 0.11);
     color: #185ab3;
     font-weight: 900;
-    margin: var(--linwood-space-6) auto 0;
+    margin: auto auto 0;
     padding: 0.68rem 1.05rem;
     text-decoration: none;
     transition:

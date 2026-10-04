@@ -38,21 +38,26 @@
     font-size: var(--linwood-text-md);
   }
 
-  .linwood-testimonials__stars,
   .linwood-testimonials__card-stars {
     display: inline-flex;
     color: #f5a400;
-  }
-
-  .linwood-testimonials__stars svg {
-    width: 2.2rem;
-    height: 2.2rem;
   }
 
   .linwood-testimonials__rating strong {
     color: #050b18;
     font-size: var(--linwood-text-xl);
     font-weight: 900;
+  }
+
+  .linwood-testimonials__google-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: var(--linwood-space-5);
+    color: #185ab3;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   .linwood-testimonials__controls {
@@ -146,9 +151,9 @@
     margin-top: var(--linwood-space-8);
   }
 
-  .linwood-testimonials__card-stars svg {
-    width: 1.35rem;
-    height: 1.35rem;
+  .linwood-testimonials__card-stars .MuiRating-root {
+    color: #f5a400;
+    font-size: 1.35rem;
   }
 
   .linwood-testimonials__quote {
@@ -178,17 +183,26 @@
   }
 
   .linwood-testimonials__author,
-  .linwood-testimonials__location,
+  .linwood-testimonials__source,
   .linwood-testimonials__date {
     margin: 0;
   }
 
   .linwood-testimonials__author {
+    display: inline-block;
     color: #20242d;
     font-weight: 900;
+    text-decoration: none;
   }
 
-  .linwood-testimonials__location {
+  a.linwood-testimonials__author:hover,
+  a.linwood-testimonials__author:focus-visible {
+    color: #185ab3;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .linwood-testimonials__source {
     margin-top: var(--linwood-space-1);
     color: #005ecb;
   }
@@ -232,6 +246,19 @@
     background: #1976d2;
   }
 
+  .linwood-testimonials__state {
+    margin: 0 auto;
+    color: var(--linwood-color-slate-700);
+    text-align: center;
+  }
+
+  .linwood-testimonials__attribution {
+    margin: var(--linwood-space-6) 0 0;
+    color: var(--linwood-color-slate-500);
+    font-size: var(--linwood-text-sm);
+    text-align: center;
+  }
+
   @keyframes linwood-testimonial-slide {
     from {
       opacity: 0;
@@ -253,11 +280,6 @@
   @media (max-width: 620px) {
     .linwood-testimonials__heading > p {
       font-size: var(--linwood-text-lg);
-    }
-
-    .linwood-testimonials__stars svg {
-      width: 1.7rem;
-      height: 1.7rem;
     }
 
     .linwood-testimonials__controls {

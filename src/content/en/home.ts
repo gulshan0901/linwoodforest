@@ -168,33 +168,7 @@ export const homeContent: HomeContent = {
     },
   ],
   testimonials: {
-    eyebrow: 'Client testimonials',
     title: 'What Our Clients Say',
-    items: [
-      {
-        quote:
-          "Madeline helped me tremendously with my home insurance. She took her time to answer all my questions and provide me with information I didn't know I needed. Truly thankful for all her help!",
-        author: 'Emily Diaz',
-        location: 'Home Insurance',
-        avatar: '👩‍💼',
-        date: '01/01/24',
-      },
-      {
-        quote: 'Dave gave me great service and I saved a lot in car insurance. Thanks Dave',
-        author: 'Ron Minnhtook',
-        location: 'Auto Insurance',
-        avatar: '👨‍🦳',
-        date: '04/05/17',
-      },
-      {
-        quote:
-          'Dave Lin was very professional and answered all of my questions. I told him what I needed and he came through with quotes for my home and car insurance which were more affordable than I expected.',
-        author: 'Eddie R',
-        location: 'Bundled Insurance',
-        avatar: '👨‍💻',
-        date: '20/01/21',
-      },
-    ],
   },
   blog: {
     eyebrow: 'Blog preview',

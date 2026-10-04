@@ -142,25 +142,7 @@ export const homeContent: HomeContent = {
     },
   ],
   testimonials: {
-    eyebrow: '客户评价',
-    title: '用于改版预览的静态证明内容。',
-    items: [
-      {
-        quote: '占位评价：描述清晰建议、快速回复和更有信心的保障选择。',
-        author: '住宅客户',
-        location: 'Whitehall, PA',
-      },
-      {
-        quote: '占位评价：小企业主获得实用保单建议。',
-        author: '企业主',
-        location: 'Lehigh Valley',
-      },
-      {
-        quote: '占位评价：房地产经纪人或贷款合作伙伴协调保险时间线。',
-        author: '推荐合作伙伴',
-        location: '宾夕法尼亚东部',
-      },
-    ],
+    title: '客户评价',
   },
   blog: {
     eyebrow: '博客预览',
