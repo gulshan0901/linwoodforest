@@ -31,6 +31,7 @@ type GoogleReviews = {
   reviewCount?: number;
   googleMapsUri?: string;
   reviews: Review[];
+  unavailable?: boolean;
 };
 
 type TestimonialsSectionProps = {
@@ -108,6 +109,7 @@ export function TestimonialsSection({ content, locale }: TestimonialsSectionProp
 
         const data: GoogleReviews = await response.json();
         setReviewData(data);
+        setFailed(Boolean(data.unavailable));
       } catch (error) {
         if (!controller.signal.aborted) {
           console.error('Could not load Google reviews.', error);

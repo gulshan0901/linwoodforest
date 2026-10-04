@@ -8,10 +8,12 @@ const handleI18nRouting = createMiddleware(routing);
 
 function buildCsp(nonce: string) {
   const isDevelopment = process.env.NODE_ENV === 'development';
+  const isVercelDeployment = process.env.VERCEL === '1' || Boolean(process.env.VERCEL_ENV);
   const scriptSources = [
     "'self'",
     `'nonce-${nonce}'`,
     isDevelopment ? "'unsafe-eval'" : undefined,
+    isVercelDeployment ? 'https://vercel.live' : undefined,
     'https://www.googletagmanager.com',
     'https://www.google.com/recaptcha/',
     'https://www.gstatic.com/recaptcha/',
@@ -23,6 +25,7 @@ function buildCsp(nonce: string) {
     'https://www.google-analytics.com',
     'https://analytics.google.com',
     'https://stats.g.doubleclick.net',
+    isVercelDeployment ? 'https://vercel.live' : undefined,
     'https://www.google.com/recaptcha/',
     'https://www.gstatic.com/recaptcha/',
     isDevelopment ? 'ws://localhost:*' : undefined,

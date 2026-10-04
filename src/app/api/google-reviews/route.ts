@@ -6,6 +6,7 @@ const GOOGLE_PLACES_API = 'https://places.googleapis.com/v1/places/';
 const NO_STORE_HEADERS = {
   'Cache-Control': 'no-store, private',
 };
+const GOOGLE_FIELD_MASK = 'rating,userRatingCount,reviews,googleMapsUri';
 
 const googlePlaceDetailsSchema = z.object({
   rating: z.number().min(0).max(5).optional(),
@@ -42,15 +43,38 @@ function safeHttpsUrl(value: string | undefined) {
   }
 }
 
+async function readGoogleError(response: Response) {
+  const contentType = response.headers.get('content-type') ?? '';
+
+  try {
+    if (contentType.includes('application/json')) {
+      return JSON.stringify(await response.json());
+    }
+
+    return await response.text();
+  } catch {
+    return 'Unable to read Google Places error body.';
+  }
+}
+
+function unavailableReviewsResponse() {
+  return NextResponse.json(
+    {
+      googleMapsUri: siteConfig.googleReviewsHref,
+      reviews: [],
+      unavailable: true,
+    },
+    { headers: NO_STORE_HEADERS },
+  );
+}
+
 export async function GET(request: Request) {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   const placeId = siteConfig.googlePlaceId;
 
   if (!apiKey) {
-    return NextResponse.json(
-      { message: 'Google reviews are not configured.' },
-      { status: 503, headers: NO_STORE_HEADERS },
-    );
+    console.error('Google reviews are not configured. Missing GOOGLE_MAPS_API_KEY.');
+    return unavailableReviewsResponse();
   }
 
   const languageCode = new URL(request.url).searchParams.get('languageCode');
@@ -64,25 +88,22 @@ export async function GET(request: Request) {
     response = await fetch(placeUrl, {
       headers: {
         'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'rating,userRatingCount,reviews,googleMapsUri',
+        'X-Goog-FieldMask': GOOGLE_FIELD_MASK,
       },
       cache: 'no-store',
       signal: AbortSignal.timeout(8000),
     });
   } catch (error) {
     console.error('Google Places review request failed.', error);
-    return NextResponse.json(
-      { message: 'Google reviews are temporarily unavailable.' },
-      { status: 502, headers: NO_STORE_HEADERS },
-    );
+    return unavailableReviewsResponse();
   }
 
   if (!response.ok) {
-    console.error(`Google Places rejected a review request with HTTP ${response.status}.`);
-    return NextResponse.json(
-      { message: 'Google reviews are temporarily unavailable.' },
-      { status: 502, headers: NO_STORE_HEADERS },
+    const errorBody = await readGoogleError(response);
+    console.error(
+      `Google Places rejected a review request with HTTP ${response.status}: ${errorBody}`,
     );
+    return unavailableReviewsResponse();
   }
 
   let responseBody: unknown;
@@ -90,19 +111,16 @@ export async function GET(request: Request) {
     responseBody = await response.json();
   } catch (error) {
     console.error('Google Places returned an unreadable review response.', error);
-    return NextResponse.json(
-      { message: 'Google reviews are temporarily unavailable.' },
-      { status: 502, headers: NO_STORE_HEADERS },
-    );
+    return unavailableReviewsResponse();
   }
 
   const parsedPlace = googlePlaceDetailsSchema.safeParse(responseBody);
   if (!parsedPlace.success) {
-    console.error('Google Places returned review data in an unexpected format.');
-    return NextResponse.json(
-      { message: 'Google reviews are temporarily unavailable.' },
-      { status: 502, headers: NO_STORE_HEADERS },
+    console.error(
+      'Google Places returned review data in an unexpected format.',
+      parsedPlace.error.flatten(),
     );
+    return unavailableReviewsResponse();
   }
   const place = parsedPlace.data;
 
