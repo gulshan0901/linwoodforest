@@ -40,6 +40,49 @@ type TestimonialsSectionProps = {
 };
 
 const EMPTY_REVIEWS: Review[] = [];
+const GOOGLE_FALLBACK_REVIEWS: GoogleReviews = {
+  rating: 5,
+  reviewCount: 201,
+  googleMapsUri: siteConfig.googleReviewsHref,
+  reviews: [
+    {
+      rating: 5,
+      text: 'Dave was recommended to us from our realtor. He was very helpful from the beginning to the end.',
+      author: 'Stephanie Torres',
+      relativeDate: '5 years ago',
+    },
+    {
+      rating: 5,
+      text: "Dave is great! I'm so glad I found him. His customer service was awesome!",
+      author: 'Dennis O-O',
+      relativeDate: '9 years ago',
+    },
+    {
+      rating: 5,
+      text: 'Dave and his team are outstanding. We have worked with them several times and they consistently exceed our expectations.',
+      author: 'Sean Goral',
+      relativeDate: '6 years ago',
+    },
+    {
+      rating: 5,
+      text: "Madeline is so helpful. I love the fact that she tries to find what's good for you.",
+      author: 'Rosa Almonte',
+      relativeDate: 'Edited a year ago',
+    },
+    {
+      rating: 5,
+      text: 'Dave found me better insurance plan. His communication is wonderful.',
+      author: 'Olga Colley',
+      relativeDate: '4 years ago',
+    },
+    {
+      rating: 5,
+      text: 'Linwood always does their best to get you the best price!',
+      author: 'Allison Rompilla',
+      relativeDate: '3 years ago',
+    },
+  ],
+};
 
 const copy = {
   en: {
@@ -84,7 +127,11 @@ export function TestimonialsSection({ content, locale }: TestimonialsSectionProp
   const [failed, setFailed] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const labels = copy[locale];
-  const reviews = reviewData?.reviews ?? EMPTY_REVIEWS;
+  const displayedReviewData =
+    reviewData && !reviewData.unavailable && reviewData.reviews.length > 0
+      ? reviewData
+      : GOOGLE_FALLBACK_REVIEWS;
+  const reviews = displayedReviewData.reviews ?? EMPTY_REVIEWS;
   const visibleCount = Math.min(3, reviews.length);
   const visibleReviews = useMemo(
     () =>
@@ -122,8 +169,8 @@ export function TestimonialsSection({ content, locale }: TestimonialsSectionProp
     return () => controller.abort();
   }, [locale]);
 
-  const googleMapsHref = reviewData?.googleMapsUri ?? siteConfig.googleReviewsHref;
-  const hasReviews = reviewData !== null && reviews.length > 0;
+  const googleMapsHref = displayedReviewData.googleMapsUri ?? siteConfig.googleReviewsHref;
+  const hasReviews = reviews.length > 0;
 
   const goToPrevious = () => {
     setActiveIndex((currentIndex) => (currentIndex - 1 + reviews.length) % reviews.length);
@@ -140,15 +187,16 @@ export function TestimonialsSection({ content, locale }: TestimonialsSectionProp
           {content.title}
         </Typography>
         <Typography component="p">{labels.description}</Typography>
-        {reviewData?.rating !== undefined && reviewData.reviewCount !== undefined ? (
+        {displayedReviewData.rating !== undefined &&
+        displayedReviewData.reviewCount !== undefined ? (
           <div
-            aria-label={`${reviewData.rating} out of 5 stars based on ${reviewData.reviewCount} Google reviews`}
+            aria-label={`${displayedReviewData.rating} out of 5 stars based on ${displayedReviewData.reviewCount} Google reviews`}
             className="linwood-testimonials__rating"
           >
-            <Rating precision={0.1} readOnly size="large" value={reviewData.rating} />
-            <strong>{reviewData.rating.toFixed(1)}</strong>
+            <Rating precision={0.1} readOnly size="large" value={displayedReviewData.rating} />
+            <strong>{displayedReviewData.rating.toFixed(1)}</strong>
             <span>
-              {reviewData.reviewCount} {labels.basedOn}
+              {displayedReviewData.reviewCount} {labels.basedOn}
             </span>
           </div>
         ) : null}
