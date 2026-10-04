@@ -71,6 +71,9 @@ deployment platform:
 
 - `GOOGLE_MAPS_API_KEY` - A key with Places API (New) enabled. Restrict it to the Places API and
   keep it private; do not use a `NEXT_PUBLIC_` variable.
+- `NEXT_PUBLIC_GOOGLE_MAPS_CID` - Public Google Maps listing CID used for the “View all reviews”
+  link. Defaults to Linwood Forest Insurance Group's CID. This is not an API key and cannot fetch
+  review text.
 
 The Place ID is available from the [Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id).
 Review content is fetched without caching and includes Google Maps attribution.
